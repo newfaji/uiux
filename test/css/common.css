@@ -30,6 +30,7 @@ body {
     font-weight: 400;
     color: #555; /* 555555 => 6글자가 같으면 3개만 써도됨 */
     line-height: 1.5;
+    word-break: keep-all;
 }
 /* html태그의 기본스타일을 리셋 시킴
    body에서 선언한 기본 스타일로 적용 */
