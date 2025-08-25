@@ -1,0 +1,62 @@
+/* 웹폰트를 선언! */
+@font-face {
+	font-family: 'PT';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'PT';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'PT';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), 
+    url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+}
+/* body에 기본 글자 스타일(본문 스타일) 적용 */
+body {
+    font-family: 'PT';
+    font-size: 17px;
+    font-weight: 400;
+    color: #555; /* 555555 => 6글자가 같으면 3개만 써도됨 */
+    line-height: 1.5;
+    word-break: keep-all;
+}
+/* html태그의 기본스타일을 리셋 시킴
+   body에서 선언한 기본 스타일로 적용 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit; /* 브라우저가 주는 스타일 무시 */
+    font-size: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal; /* 기울어진 글자 바로 */
+}
+a {
+    color: inherit;
+    text-decoration: none; /* 밑줄삭제 */
+}
+ol, li, ul {
+    list-style: none; /* 앞에 도형 숫자 삭제 */
+}
+* { /* *(와일드카드) 모든 태그 - 여백삭제 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
