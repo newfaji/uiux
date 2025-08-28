@@ -1,0 +1,45 @@
+@import url(common.css);
+.btn {
+    margin: 50px 0 50px 0;
+}
+.btn a {
+    padding: 8px 30px 8px 30px;
+    display: inline-block;
+    border-radius: 50px;
+}
+.item1 a {
+    background-color: #ededed;
+}
+.item1 a:hover {
+    background-color: #106BB5;
+    color: #fff;
+}
+.item2 a {
+    border: 1px solid #666;
+}
+.item2 a:hover {
+    border-color: #106BB5;
+    color: #106BB5;
+}
+/* border가 over했을때만 나옴
+   hover일때만 border를 추가하면 - 사이즈가 변동됨
+   오버전에도 동일한 두께의 border를 주면 됨...
+   background색이랑 동일한 border를 주면 됨... */
+.item3 a {
+    background-color: #ededed;
+    border: 5px solid #ededed;
+}
+.item3 a:hover {
+    background-color: #fff;
+    border-color: #106BB5;
+    color: #106BB5;
+}
+.item4 a {
+    border: 5px solid #106BB5;
+    color: #106BB5;
+}
+.item4 a:hover {
+    background-color: #106BB5;
+    color: #fff;
+    /* 크기를 동일하게 주기 위해서 border를 없애지 않음 */
+}
