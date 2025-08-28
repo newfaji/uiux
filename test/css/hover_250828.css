@@ -43,3 +43,62 @@
     color: #fff;
     /* 크기를 동일하게 주기 위해서 border를 없애지 않음 */
 }
+
+.gallery {
+    margin: 100px 0 0 0;
+}
+.gallery ul {
+    display: flex; /* li를 좌우로 */
+    justify-content: space-between;
+}
+.gallery ul li {
+    width: 404px;
+}
+.gallery ul li a {
+    display: block;
+}
+.gallery ul li a .photo {
+    overflow: hidden; /* photo에 꼭 줌 */
+    border-radius: 20px;
+    /* 이미지도 행간이 적용되어 하단에 여백이 발생
+       글자크기와 행간을 0으로 주고 하단 여백 삭제 */
+    font-size: 0;
+    line-height: 0;
+}
+.gallery ul li a .photo img {
+    transition: 0.5s; /* 변화를 0.5초동안 천천히 */
+}
+.gallery ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+
+.bbs {
+    margin: 100px 0 0 0;
+}
+.bbs ul {
+    display: flex; /* li를 좌우로 */
+    justify-content: space-between;
+}
+.bbs ul li {
+    width: 404px;
+}
+.bbs ul li a {
+    display: block;
+}
+.bbs ul li a .photo {
+    overflow: hidden; /* photo에 꼭 줌 */
+    border-radius: 20px;
+    /* li에서 넓이를 제한해서 넓이는 들어가 있음 */
+    height: 302px;
+    transition: 0.5s;
+}
+.bbs ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bbs ul li a:hover .photo {
+    box-shadow: 0 8px 28px -6px #1319271f, 0 18px 88px -4px #13192724;
+    transform: translateY(-10px);
+}
