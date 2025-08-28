@@ -110,3 +110,15 @@ footer {
     padding: 64px 0 82px 0;
     color: rgba(255, 255, 255, 0.8);
 }
+footer .f_nav ul {
+    display: flex; /* li를 좌우 배치 */
+    gap: 0 42px; /* 위아래-좌우 여백값 */
+}
+footer .f_info {
+    margin: 18px 0 18px 0;
+    display: flex; /* address span 좌우 배치 */
+    gap: 0 24px;
+}
+footer .f_info strong {
+    font-weight: 700;
+}
