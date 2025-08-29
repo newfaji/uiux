@@ -1,0 +1,44 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.global {
+    margin: 60px 0 0 0;
+}
+.global h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.global .sub_tit {
+    font-size: 20px;
+    font-weight: 700;
+    color: #07B53B;
+    margin: 20px 0 10px 0;
+}
+.global a {
+    border: 1px solid #07B53B;
+    color: #07B53B;
+    padding: 9px 44px 8px 43px;
+    display: inline-block;
+    margin: 18px 0 40px 0;
+}
+
+.market {
+    margin: 70px 0 0 0;
+    background: url(../images/market_bg.jpg) no-repeat center center / cover;
+    height: 598px;
+    color: #fff;
+    text-align: center;
+}
+.market h1 {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 60px 0 20px 0;
+}
+.market a {
+    border: 1px solid #fff;
+    padding: 9px 37px 8px 43px;
+    display: inline-block;
+    margin: 21px 0 41px 0;
+}
