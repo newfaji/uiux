@@ -84,6 +84,7 @@ header .gnb ul li a {
     color: #DB0032;
     padding: 10px 29px 10px 29px;
     border-radius: 30px;
+    /* transition: 0.5s; */
 }
 .biz .txt .btn_wrap a:hover { /* a에 마우스를 올렸을때 */
     background-color: #DB0032;
@@ -129,6 +130,11 @@ header .gnb ul li a {
     padding: 10px 29px 10px 29px;
     border-radius: 30px;
     margin: 46px 0 0 0;
+    /* transition: 0.5; */
+}
+.community .news .tit a:hover {
+    background-color: #fff;
+    color: #B40023;
 }
 .community .news .list {
     width: 832px;
@@ -152,6 +158,11 @@ header .gnb ul li a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /* transition: 0.5s; */
+}
+.community .news .list ul li a:hover h3 {
+    color: #FCF0D6;
+    font-weight: 800;
 }
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
@@ -175,6 +186,10 @@ header .gnb ul li a {
     border: 1px solid #fff;
     padding: 10px 29px 10px 29px;
     border-radius: 30px;
+}
+.community .media .tit a:hover {
+    background-color: #fff;
+    color: #B40023;
 }
 .community .media .list {
     margin: 36px 0 0 0;
@@ -201,6 +216,10 @@ header .gnb ul li a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.community .media .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .community .media .list ul li a h3 {
     font-size: 20px;
@@ -223,4 +242,39 @@ footer {
     padding: 75px 0 66px 0;
     background-color: #2D2D2D;
     color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex; /* inner-family_site 좌우배치 */
+    justify-content: space-between;
+}
+footer .inner .f_nav ul {
+    display: flex; /* li를 좌우에 배치 */
+    gap: 0 43px;
+}
+footer .inner .f_nav ul li a {
+    display: block;
+    /* transition: 0.5s; */
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 30px 0 30px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 28px; /* 위아래-좌우 */
+}
+footer .inner .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+footer .family_site button {
+    width: 188px;
+    line-height: 43px; 
+    /* 행간으로 높이를 주면 글자는 위아래 가운데 */
+    background-color: #B40023;
+    color: #fff;
+    display: block;
+    text-align: left;
+    padding: 0 0 0 20px;
 }
