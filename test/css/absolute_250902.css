@@ -1,0 +1,202 @@
+@import url(common.css);
+
+header {
+    background-color: #fff;
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 30px;
+    top: 30px;
+    z-index: 100; /* header를 맨위에 배치하기 위함 */
+    width: calc(100% - 60px);
+    height: 80px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .wrapper {
+    position: relative;  /* button 정렬의 기준 */
+    height: 700px;
+} 
+.visual h2 {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    padding: 227px 0 23px 0;
+}
+.visual button {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: #DB0032;
+    border-radius: 50%; /* 동그라미는 50% */
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: -100px;
+    bottom: -100px;
+}
+
+.f_nav {
+    margin: 50px 0 50px 0;
+}
+.f_nav ul {
+    display: flex; /* li를 좌우로 정렬 */
+    gap: 0 48px; /* 위아래여백 - 좌우여백 */
+}
+.f_nav ul li {
+    position: relative; 
+    /* before를 li를 기준으로 정렬하고 싶은데 그렇게 하려면 position속성이 선언되어야함.
+       position 속성중에서 제일 멀쩡한게 (값을 준것과 안준것의 차이가 거의 없음) relative 
+       그래서 absolute 정렬의 기준에는 position:relative;를 줌 
+       position값이 없을 경우에만 추가    */
+}
+.f_nav ul li::before {
+    content: ""; /* before/after 가상선택자는 반드시 content라는 속성이 있어야 나타남 */
+    width: 1px;
+    height: 11px;
+    background-color: #D4D4D4;
+    display: block;
+    position: absolute; /* li를 기준으로 정렬 */
+    left: -22px;
+    top: 6px;
+}
+/* 첫번째 li의 before 숨김처리 */
+.f_nav ul li:first-child::before {
+    display: none; /* html이 아예 없었던것처럼 숨김처리 */
+}
+
+.btn_svg,
+.btn_path,
+.btn_path_ab,
+.btn_bg,
+.btn_ico {
+    margin: 50px 0 50px 0;
+}
+.btn_svg h2,
+.btn_path h2,
+.btn_path_ab h2,
+.btn_bg h2,
+.btn_ico h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.btn_svg a {
+    border: 1px solid #666;
+    padding: 9px 62px 8px 26px;
+    display: inline-block;
+    border-radius: 25px;
+    position: relative; /* after정렬의 기준 */
+}
+.btn_svg a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 25px;
+    top: 13px;
+    background: url(../images/btn_arrow.svg) no-repeat center center;
+    width: 16px;
+    height: 16px;
+}
+.btn_svg a:hover {
+    border-color: #DB0032;
+    background-color: #DB0032;
+    color: #fff;
+}
+.btn_svg a:hover::after {
+    background-image: url(../images/btn_arrow_w.svg);
+}
+
+.btn_path a {
+    border: 1px solid #666;
+    padding: 9px 26px 8px 26px;
+    display: inline-flex; /* span-svg가 좌우로 정렬 */
+    align-items: center;
+    border-radius: 25px;
+    gap: 0 29px;
+}
+.btn_path a:hover {
+    border-color: #DB0032;
+    background-color: #DB0032;
+    color: #fff;
+}
+.btn_path a:hover svg path {
+    fill: #fff;
+}
+
+.btn_path_ab a {
+    border: 1px solid #666;
+    padding: 9px 62px 8px 26px;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative; /* svg 정렬의 기준 */
+}
+.btn_path_ab a svg {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 26px;
+    top: 14px;
+}
+.btn_path_ab a:hover {
+    border-color: #DB0032;
+    background-color: #DB0032;
+    color: #fff;
+}
+.btn_path_ab a:hover svg path {
+    fill: #fff;
+}
+
+.btn_bg a {
+    border: 1px solid #666;
+    padding: 9px 62px 8px 26px;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative; /* after 정렬의 기준 */
+}
+.btn_bg a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 26px;
+    top: 14px;
+    width: 7px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.63353 7.0009L0.733531 2.1009C0.566864 1.93424 0.486308 1.73979 0.491864 1.51757C0.49742 1.29535 0.583531 1.1009 0.750197 0.934238C0.916864 0.767572 1.11131 0.684238 1.33353 0.684238C1.55575 0.684238 1.7502 0.767572 1.91686 0.934238L7.0502 6.0509C7.18353 6.18424 7.28353 6.33424 7.3502 6.5009C7.41686 6.66757 7.4502 6.83424 7.4502 7.0009C7.4502 7.16757 7.41686 7.33424 7.3502 7.5009C7.28353 7.66757 7.18353 7.81757 7.0502 7.9509L1.91686 13.0842C1.7502 13.2509 1.55297 13.3315 1.3252 13.3259C1.09742 13.3203 0.900196 13.2342 0.73353 13.0676C0.566863 12.9009 0.48353 12.7065 0.48353 12.4842C0.48353 12.262 0.566863 12.0676 0.73353 11.9009L5.63353 7.0009Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+}
+.btn_bg a:hover {
+    border-color: #DB0032;
+    background-color: #DB0032;
+    color: #fff;
+}
+.btn_bg a:hover::after{
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.63353 7.0009L0.733531 2.1009C0.566864 1.93424 0.486308 1.73979 0.491864 1.51757C0.49742 1.29535 0.583531 1.1009 0.750197 0.934238C0.916864 0.767572 1.11131 0.684238 1.33353 0.684238C1.55575 0.684238 1.7502 0.767572 1.91686 0.934238L7.0502 6.0509C7.18353 6.18424 7.28353 6.33424 7.3502 6.5009C7.41686 6.66757 7.4502 6.83424 7.4502 7.0009C7.4502 7.16757 7.41686 7.33424 7.3502 7.5009C7.28353 7.66757 7.18353 7.81757 7.0502 7.9509L1.91686 13.0842C1.7502 13.2509 1.55297 13.3315 1.3252 13.3259C1.09742 13.3203 0.900196 13.2342 0.73353 13.0676C0.566863 12.9009 0.48353 12.7065 0.48353 12.4842C0.48353 12.262 0.566863 12.0676 0.73353 11.9009L5.63353 7.0009Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.btn_ico a {
+    border: 1px solid #666;
+    padding: 9px 62px 8px 26px;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative; /* i 정렬의 기준 */
+}
+.btn_ico a i {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 9px;
+}
+.btn_ico a:hover {
+    border-color: #DB0032;
+    background-color: #DB0032;
+    color: #fff;
+    /* 아이콘도 폰트라 글자색상이 적용됨 */
+}
+
+body {
+    padding: 0 0 500px 0;
+}

@@ -51,6 +51,16 @@ a {
 ol, li, ul {
     list-style: none; /* 앞에 도형 숫자 삭제 */
 }
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer; /* 마우스 오버시 손바닥 모양으로 변경 */
+}
 * { /* *(와일드카드) 모든 태그 - 여백삭제 */
     margin: 0;
     padding: 0;
