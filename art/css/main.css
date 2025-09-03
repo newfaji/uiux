@@ -104,11 +104,31 @@ header .gnb ul li a {
     object-fit: cover;
 }
 .community {
-    background: url(../images/community_bg.jpg) no-repeat center top / auto 910px;
     margin: 145px 0 0 0;
-    /* height: 910px; - 콘텐츠가 배경보다 더 길어서 배경의 높이만큼 주면X 
-       background의 높이니까 background의 높이값을 주면 됨.. */
     color: #fff;
+    position: relative; /* before 정렬의 기준 */
+}
+.community::before {
+    content: ""; /* 필수값 */
+    position: absolute; /* community를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /*
+        <div class="community">
+            ::before 
+            <div class="news"></div>
+            <div class="media"></div>
+        </diV>
+        before 는 position 속성이 있고 나머지는 없음 
+        before가 맨위로 올라감 
+        z-index: -1을 주면 position이 없는 요소보다 더 아래에 배치
+        지하로 뚫고 들어감...
+        그래도 community 밖에 나가지는 않음
+    */
+    width: 100%;
+    height: 910px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
 }
 .community .news {
     padding: 102px 0 0 0;
@@ -116,6 +136,7 @@ header .gnb ul li a {
 .community .news .wrapper {
     display: flex; /* tit와 list를 좌우로 배치 */
     justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -124,18 +145,7 @@ header .gnb ul li a {
     letter-spacing: -0.02em;
     margin: 37px 0 16px 0;
 }
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 29px 10px 29px;
-    border-radius: 30px;
-    margin: 46px 0 0 0;
-    /* transition: 0.5; */
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #B40023;
-}
+
 .community .news .list {
     width: 832px;
 }
@@ -167,8 +177,25 @@ header .gnb ul li a {
 .community .news .list ul li a span {
     color: rgba(255, 255, 255, 0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 29px 10px 29px;
+    border-radius: 30px;
+    /* transition: 0.5; */
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    top: 208px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #B40023;
+}
 .community .media {
     margin: 189px 0 0 0;
+}
+.community .media .wrapper {
+    position: relative; /* more 정렬의 기준 */
 }
 .community .media .tit {
     display: flex; /* h2-a 좌우 배치 */
@@ -181,16 +208,7 @@ header .gnb ul li a {
     line-height: 1.4;
     letter-spacing: -0.02em;
 }
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 29px 10px 29px;
-    border-radius: 30px;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #B40023;
-}
+
 .community .media .list {
     margin: 36px 0 0 0;
 }
@@ -236,6 +254,19 @@ header .gnb ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 29px 10px 29px;
+    border-radius: 30px;
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 3px;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #B40023;
+}
 
 footer {
     margin: 124px 0 0 0;
@@ -251,12 +282,39 @@ footer .inner .f_nav ul {
     display: flex; /* li를 좌우에 배치 */
     gap: 0 43px;
 }
+footer .inner .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .inner .f_nav ul li::after {
+    content: ""; /* 필수 */
+    position: absolute;
+    right: -23px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* 마지막 li의 after 숨김처리 */
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+}
 footer .inner .f_nav ul li a {
     display: block;
     /* transition: 0.5s; */
+    position: relative; /* after 정렬의 기준 */
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 0; 
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%; /* 기준이되는 a의 100% */
 }
 footer .inner .f_info {
     margin: 30px 0 30px 0;
@@ -277,4 +335,17 @@ footer .family_site button {
     display: block;
     text-align: left;
     padding: 0 0 0 20px;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .family_site button::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    position: absolute;
+    right: 21px;
+    top: 16px;
+    transform: rotate(-45deg);
 }
