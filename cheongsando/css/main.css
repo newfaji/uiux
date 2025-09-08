@@ -26,6 +26,64 @@ header .gnb ul li a {
     line-height: 90px; /* header의 높이와 같은값 */
     padding: 0 20px 0 20px;
 }
+header .util {
+    display: flex; /* 날씨 좌우배치 */
+    align-items: center;
+    gap: 0 25px;
+}
+header .util .weather {
+    padding: 0 0 0 50px; /* 아이콘 들어갈 자리를 여백으로 줌 */
+    line-height: 1.1;
+    position: relative; /* before 정렬의 기준 */
+}
+header .util .weather::before {
+    content: "";
+    position: absolute; /* weather를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: url(../images/util_weather.svg) no-repeat left top; 
+    /* 배경이미지의 사이즈를 안주면 원래 사이즈로 들어감 */
+}
+header .util .weather strong {
+    display: block;
+    font-weight: 800;
+}
+header .util .weather span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+header .util .sea {
+    position: relative; /* before 정렬의 기준 */
+    padding: 25px 0 0 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+header .util .sea::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 25px;
+    background: url(../images/util_sea.svg) no-repeat center center;
+}
+header .util .flow {
+    position: relative; /* before 정렬의 기준 */
+    padding: 25px 0 0 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+header .util .flow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 25px;
+    background: url(../images/util_flow.svg) no-repeat center center;
+}
 
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
@@ -75,6 +133,308 @@ header .gnb ul li a {
 }
 .visual .life:hover::before {
     background-image: url(../images/life_ico_over.svg);
+}
+
+/* .culture {
+    position: relative;
+    padding: 166px 0 94px 0;
+}
+.culture::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -250px;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% + 250px);
+    background-color: #D9E74C;
+} */
+.culture {
+    margin: 166px 0 0 0;
+}
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.culture .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 18px 0;
+}
+.culture .list {
+    margin: 43px 0 0 0;
+}
+.culture .list ul {
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: space-between;
+}
+.culture .list ul li {
+    /* 감싸고 있는 ul의 넓이에 몇개가 정렬 - 4 = 25% 
+       100% / 한줄에 li의 갯수 =  100/4 = 25% 
+       한줄의 사이 여백의 합 24*3 = 72 / 한줄에 li의 갯수 = 18 */
+    width: calc(25% - 18px);
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden;
+    height: 217px;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s; 
+}.more 
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.culture .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 18px 0 10px 0;
+}
+.tour .more,
+.culture .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 71px;
+}
+.tour .more a,
+.culture .more a {
+    padding: 0 25px 0 0;
+    display: inline-block;
+    font-weight: 800;
+    position: relative; /* after 정렬의 기준 */
+}
+.tour .more a::after,
+.culture .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    height: 100%;
+    background: url(../images/culture_more.svg) no-repeat center center;
+    /* width: 22px;
+    height: 1px;
+    background-color: #1d1d1d; */
+}
+.tour .more a:hover,
+.culture .more a:hover {
+    color: #1F4993;
+}
+.tour .more a:hover::after,
+.culture .more a:hover::after {
+    animation-name: more;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-image: url(../images/culture_more_over.svg);
+}
+@keyframes more {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tour {
+    margin: 106px 0 0 0;
+    background-color: #F7F7F7;
+    padding: 161px 0 118px 0;
+}
+.tour .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.tour .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 18px 0;
+}
+.tour .list {
+    margin: 40px 0 0 0;
+}
+.tour .list ul {
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 15.87%;
+    /* li한개의 넓이 200px, ul의 넓이가 1260px 
+       그럼 li는 ul의 몇 %인가?   */
+}
+
+.tour .list ul li a {
+    display: flex; /* h3-p 하단 정렬 */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 47px 0;
+    height: 383px; 
+    /* li의 사이즈와 a의 사이즈를 같게 
+       li가 넓이를 갖음. a가 높이를 가져야함.. */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.tour .list ul li.bg1 a {
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.bg2 a {
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.bg3 a {
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.bg4 a {
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+.tour .list ul li a p {
+    display: none; /* 숨김 */
+}
+/* li에 on클래스가 들어갔을때 */
+.tour .list ul li.on {
+    width: 49.52%;
+}
+.tour .list ul li.on a {
+    align-items: flex-start;
+    padding: 0 0 44px 49px;
+}
+.tour .list ul li.on a h3 {
+    font-size: 24px;
+    margin: 0 0 7px 0;
+}
+.tour .list ul li.on a p {
+    display: block; 
+    /* none으로 숨긴요소는 none빼고 뭐든 줘도 나타남
+       다만 block이 만만해서 대부분 block을 줌 */
+}
+
+.community {
+    height: 823px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    padding: 163px 0 0 0;
+}
+.community .wrapper {
+    display: flex; /* tit-inner 좌우배치 */
+    justify-content: space-between;
+}
+.community .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 15px 0;
+}
+.community .inner {
+    display: flex; /* notice - service 좌우 배치 */
+    align-items: flex-end; 
+    gap: 0 12px;
+}
+.community .inner .notice {
+    backdrop-filter: blur(10px);
+    background-color: rgba(1, 32, 63, 0.6);
+    width: 548px;
+    height: 383px;
+    border-radius: 10px;
+    padding: 42px 40px 0 40px; 
+    /* 아래여백은 절대 안줌 - 높이가 있으므로 */
+    position: relative; /* more 정렬의 기준 */
+}
+.community .inner .notice h3 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+.community .inner .notice ul {
+    margin: 23px 0 0 0;
+}
+/* .community .inner .notice ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .inner .notice ul li:first-child {
+    border-top: none;
+} */
+.community .inner .notice ul li a {
+    display: flex; /* h4-span 좌우배치 */
+    justify-content: space-between;
+    padding: 11px 0 11px 0;
+}
+.community .inner .notice ul li a h4 {
+    width: calc(100% - 105px);
+    /* 제목은 날짜가 들어갈 공간 빼고 전체 
+       a를 기준으로 100% 
+       1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .inner .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .inner .notice .more {
+    position: absolute; /* notice를 기준으로 정렬 */
+    right: 40px;
+    top: 42px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: url(../images/community_notice.svg) no-repeat center center;
+}
+.community .inner .notice .more span {
+    display: none; /* 숨김 */
+}
+/* notice over 스타일 */
+.community .inner .notice:hover {
+    background-color: #fff;
+    color: #1d1d1d;
+}
+.community .inner .notice:hover ul li a span {
+    color: #666;
+}
+.community .inner .notice:hover .more {
+    border-color: #1F4993;
+    background-color: #1F4993;
+    background-image: url(../images/community_notice_over.svg);
+}
+.community .inner .notice ul li a:hover h4 {
+    color: #1F4993;
+    font-weight: 800;
+}
+.community .inner .notice ul li a:hover span {
+    color: #1F4993;
+}
+.community .inner .service {
+    width: 312px;
+}
+.community .inner .service ul {
+    display: flex; /* li를 좌우로 */
+    flex-wrap: wrap; /* 2줄이상 허용 */
+    gap: 12px 12px;
+}
+.community .inner .service ul li {
+    width: calc(50% - 6px);
+    /* 100%/한줄에 나오는 li갯수 2 = 100/2 = 50%
+       한줄여백의합 12px / 한줄에 나오는 li갯수 2 = 6  */
+}
+.community .inner .service ul li a {
+    height: 150px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(1, 32, 63, 0.6);
+    border-radius: 10px;
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    padding: 28px 0 0 27px;
 }
 
 footer {
