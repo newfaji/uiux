@@ -258,11 +258,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex; /* li를 좌우로 배치 */
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 15.87%;
+    /* width: 15.87%; */
     /* li한개의 넓이 200px, ul의 넓이가 1260px 
        그럼 li는 ul의 몇 %인가?   */
+    transition: 0.5s;
+    overflow: hidden;
+    flex: 1 1 0%;
 }
 
 .tour .list ul li a {
@@ -298,10 +302,12 @@ header .util .flow::before {
 }
 .tour .list ul li a p {
     display: none; /* 숨김 */
+    white-space: nowrap; /* 줄바꿈 금지 */
 }
 /* li에 on클래스가 들어갔을때 */
 .tour .list ul li.on {
-    width: 49.52%;
+    /* width: 49.52%; */
+    flex: 3 1 0%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;
