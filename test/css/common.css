@@ -70,3 +70,14 @@ button {
     width: 1260px;
     margin: 0 auto;
 }
+
+/* html문서 구조상 써야하지만 
+   디자인에서는 구현이 안되는 글자를 숨길때 사용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
