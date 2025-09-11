@@ -81,3 +81,13 @@ button {
     margin: -1px;
     overflow: hidden;
 }
+@media screen and (max-width:768px){
+    /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
+                    body {
+                        font-size: 16px;
+                    }
+                    .wrapper {
+                        width: auto;
+                        margin: 0 16px;  /* 위아래 여백0 좌우여백16px */
+                    }
+}/*@media */
