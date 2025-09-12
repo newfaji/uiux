@@ -1,0 +1,265 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* logo와 inner를 header 넓이 안에서 좌우 끝으로 배치 */
+    align-items: center;
+    height: 100px;
+    margin: 0 30px; /* 위아래 좌우 */
+}
+header .inner {
+    display: flex; /* gnb shop 을 좌우로 */
+    align-items: center; /* 위아래 가운데 */
+    gap: 34px; /* gnb와 shop 사이의 여백 */
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a {
+    display: block; /* a 필수값 */
+    font-size: 23px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 100px;
+    /* header의 높이랑 1차메뉴의 a의 높이는 같아야함.. a에 행간을 header의 높이값으로 줌 
+       a에 높이가 생기고 글자는 위아래 가운데 정렬 */
+    padding: 0 32px;
+}
+header .inner .shop {
+    font-size: 18px;
+    font-weight: 800;
+    color: #00AC47;
+    border: 1px solid #00AC47;
+    padding: 6px 38px 6px 49px;
+    border-radius: 21px;
+    position: relative;
+}
+header .inner .shop::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    width: 21px;
+    height: 21px;
+    background: url(../images/shop.svg) no-repeat center center;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    margin: 0 30px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 800;
+    padding: 375px 0 8px 0;
+}
+
+.product {
+    margin: 185px 0 0 0;
+}
+.product .tit h2 {
+    color: #00AC47;
+}
+.product .tit p {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 7px 0 0 0;
+}
+.product .list {
+    margin: 30px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: calc(25% - 18px);
+}
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a .photo {
+    overflow: hidden;
+    height: 259px;
+}
+.product .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product .list ul li a h3 {
+    font-size: 20px;
+    color: #1d1d1d;
+    margin: 12px 0 0 0;
+    /* 1줄로 제한 */
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.network {
+    background: url(../images/network_bg.jpg) no-repeat center center / cover;
+    margin: 112px 0 0 0;
+    height: 600px;
+    color: rgba(255,255,255,0.8);
+}
+.network h2 {
+    padding: 190px 0 0 0;
+    color: #89ECB2;
+}
+.network .sub_tit {
+    font-size: 45px;
+    font-weight: 800;
+    margin: 7px 0 8px 0;
+    color: #fff;
+}
+.network a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 6px 20px; /* 위아래 - 좌우 */
+    border-radius: 20px;
+    margin: 30px 0 0 0;
+}
+
+.community {
+    margin: 170px 0 0 0;
+}
+.community .tit h2 {
+    color: #00AC47;
+}
+.community .tit p {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 7px 0 0 0;
+}
+.community .list {
+    margin: 35px 0 0 0;
+    display: flex; /* group을 좌우로배치 */
+    justify-content: space-between; /* 양쪽끝에 배치 */
+}
+.community .list .group {
+    width: calc(50% - 6px);
+    /*
+        몇개로 분할 : 2개  = 100/2 = 50%
+        사이 여백의 총합 / 분할하는 갯수로 나눔 = 12 / 2 = 6px
+    */
+}
+.community .list .group ul {
+    display: flex; /* li를 좌우에 배치 */
+    flex-wrap: wrap; /* li가 2줄로 나타나는 걸 허락 */
+    gap: 12px;
+}
+
+.community .list .group ul li.color,
+.community .list .group ul li.gray {
+    width: calc(50% - 6px);
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a {
+    height: 233px;
+}
+.community .list .group ul li.color.bg1 a {
+    background-color: #00AC47;
+    color: #fff;
+}
+.community .list .group ul li.color.bg2 a {
+    background-color: #005EB8;
+    color: #fff;
+}
+.community .list .group ul li.gray a {
+    background-color: #F4F4F4;
+    color: #1d1d1d;
+}
+.community .list .group ul li.review {
+    width: 100%; 
+    /* 나를 감싸는 요소 ul의 넓이의 100%가 들어감 */
+}
+.community .list .group ul li.review a {
+    height: 387px;
+    color: #fff;
+}
+.community .list .group ul li.review.bg1 a {
+    background: url(../images/community_bg1.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li.review.bg2 a {
+    background: url(../images/community_bg2.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li a {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.community .list .group ul li a h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 5px 0 30px 0;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .list .group ul li a .date {
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date {
+    color: rgba(255,255,255,0.8);
+}
+.community .list .group ul li.gray a .date {
+    color: #666;
+}
+.community .list .group ul li a .date span:first-child {
+    position: relative;
+}
+.community .list .group ul li a .date span:first-child::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.6);
+}
+.community .list .group ul li.gray a .date span:first-child::after {
+    background-color: #ccc;
+}
+
+footer {
+    background-color: #2D2D2D;
+    padding: 66px 0 95px 0;
+    color: rgba(255,255,255,0.8);
+    margin: 145px 0 0 0;
+}
+footer .f_nav {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0 0 35px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 33px;
+}
+footer .f_nav ul li.privacy a {
+    font-weight: 800;
+}
+footer .f_info {
+    margin: 34px 0 22px 0;
+}
+footer .f_info .group {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 5px 0;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
