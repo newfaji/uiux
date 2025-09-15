@@ -1,0 +1,22 @@
+/* 모든 본문에 나오는 태그를 감싸는 태그가 body, 그래서 body에 기본 글자스타일 정의
+   글자스타일은 상속 됨 (글자스타일만 상속) */
+body {
+    font-family: 'Pretendard', sans-serif;
+    /* 반드시 font.css에서 선언한 이름으로 불러야함. sans-serif는 만약 프리텐다드가 없으면
+       고딕체 아무거나 쓰라는 의미 */
+    font-size: 17px;
+    font-weight: 400; /* font.css에 선언되어 있는 두께값 */
+    line-height: 1.5;
+    color: #555;
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+}
+.wrapper {
+   width: 1260px; /* 내 디자인 파일 레이아웃 가이드 넓이 */
+   margin: 0 auto; /* 브라우저에 가운데 정렬 */
+}
+#wrap { /* 홈페이지 전체를 감싸는 요소 */
+   min-width: 1320px;
+   /* wrapper의 사이즈 + 좌우에 줄 최소여백 (가로스크롤바가 생겼을때 콘텐츠 좌우여백) 
+      1260 + 30 + 30 = 1320px
+   */
+}
