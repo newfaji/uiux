@@ -29,6 +29,11 @@ body {
 }
 
 /* 기본 제목 스타일 */
+.tit_top {
+    display: block;
+    color: #004289;
+    margin: 0 0 10px 0;
+}
 .tit_gm {
     font-family: 'GM';
     font-weight: 700;
