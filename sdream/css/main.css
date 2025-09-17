@@ -6,7 +6,7 @@
     position: relative; /* btn_wrap 정렬의 기준 */
 }
 .visual .swiper-slide {
-    height: 100vh; /* 브라우저 높이와 동일 */
+    height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
