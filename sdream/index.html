@@ -3,31 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--외부라이브러리 파일 상단-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!--내가 직접 코딩하는 하단-->
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>삼성꿈장학재단</title>
 </head>
 <body>
-    <h1>삼성꿈장학재단은 더불어 성장하는 <br>배움공동체를 지향합니다.
-        gmarket sans Bold 40px 행간 130% 색상 #191e26</h1>
-    <p>삼성꿈장학재단은 교육 소외계층의 실질적인 교육기회 확대를 위한 장학사업과 복지친화적인 교육 여건 조성 사업을 실시함으로써 개인, 지역, 계층 간 교육격차를 해소하고 사회통합 및 국가발전에 기여하기 위해 설립되었습니다.
-        Noto Sans kr (노트산스, 본고딕) Regular 17px 행간 150% 색상 #333a46</p>
-    
-    <h2>jpg이미지 넓이 300짜리</h2>
-    <img src="images/text1.jpg" alt="">
+    <div class="wh"></div>
+    <div id="wrap">
+        <header></header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide  popup1">
+                            <div class="wrapper">
+                                <h2>꿈을 잇고,<br class="mo_only"> 희망을 키우며, <br>
+                                    내일을 밝혀갑니다</h2>
+                                <p>배움의 기회와 돌봄이 필요한 아동·청소년에게 희망의 사다리를 놓습니다</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide  popup2">
+                            <div class="wrapper">
+                                <h2>아이들의 꿈이 멈추지 않도록, <br class="pc_only">
+                                    함께 키워가는 배움의 공동체</h2>
+                                <p>배움의 기회와 돌봄이 필요한 아동·청소년에게 희망의 사다리를 놓습니다</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide  popup3">
+                            <div class="wrapper">
+                                <h2>사람을 키우는 힘, <br>
+                                    사랑과 관심에서 시작됩니다</h2>
+                                <p>경제적 지원을 넘어 교육의 기회를 넓히고 아이들의 미래를 지켜갑니다</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+            </section><!--visual-->
+            <section class="biz">
 
-    <h2>jpg이미지 넓이 900짜리 - 축소 넓이300으로</h2>
-    <img src="images/text3.jpg" alt="" class="text">
+            </section><!--biz-->
+            <section class="notice">
 
-    <h2>글자를 svg 넓이 300으로 저장</h2>
-    <img src="images/text.svg" alt="">
+            </section><!--notice-->
+            <section class="webzine">
 
-    <h2>로고를 jpg 넓이 300으로 저장</h2>
-    <img src="images/logo.jpg" alt="">
+            </section><!--webzine-->
+            <section class="service">
 
-    <h2>로고를 svg 넓이 300으로 저장</h2>
-    <img src="images/logo.svg" alt="">
-
-    <h1>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</h1>
+            </section><!--service-->
+        </main>
+        <footer></footer>
+    </div>
 </body>
 </html>
