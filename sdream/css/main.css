@@ -14,6 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px 0 20px;
+    transition: 0.3s;
 }
 header .logo a {
     display: block;
@@ -21,6 +22,7 @@ header .logo a {
     height: 47px;
     background: url(../images/logo.svg) no-repeat center center / contain;
     /* 이미지를 잘리지 않게 모두 나오게 함 - contain */
+    transition: 0.3s;
 }
 header .gnb .gnb_open,
 header .gnb .gnb_close {
@@ -48,9 +50,27 @@ header .util .lang .lang_open {
 }
 header .util .mypage {
     background-image: url(../images/util_mypage.svg);
+    transition: 0.3s;
 }
 header .util .lang .lang_open {
     background-image: url(../images/util_lang.svg);
+    transition: 0.3s;
+}
+/* header에 fixed 클래스가 추가되었을때 */
+header.fixed {
+    position: fixed; /* 무조건 body랑만 정렬 */
+    background-color: #fff;
+    color: #191E26;
+    border-bottom: 1px solid #E1E5EC;
+}
+header.fixed .logo a {
+    background-image: url(../images/logo_b.svg);
+}
+header.fixed .util .mypage {
+    background-image: url(../images/util_mypage_b.svg);
+}
+header.fixed .util .lang .lang_open {
+    background-image: url(../images/util_lang_b.svg);
 }
 @media screen and (max-width:768px){
             header {
@@ -72,6 +92,9 @@ header .util .lang .lang_open {
             }
             header .util {
                 display: none; /* 모바일에서 숨김 */
+            }
+            header.fixed .gnb .gnb_open {
+                background-image: url(../images/gnb_open_b.svg);
             }
 }/*@media*/
 
@@ -191,7 +214,7 @@ header .util .lang .lang_open {
     position: sticky;
     /* 감싸는 요소중에서 단한개라도 overflow:hidden; 속성을 주면
         작동이 안됨 */
-    top: 50px;
+    top: 120px;
 }
 .biz .list {
     width: 725px;
