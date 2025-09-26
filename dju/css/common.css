@@ -4,7 +4,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5;
-    color: #363636;
+    color: #2D2D2D;
     word-break: keep-all; /* 단어별로 줄바꿈 */
     word-wrap: break-word;
     /* 단어가 너무 길었을때 강제줄바꿈 */
