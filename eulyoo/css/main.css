@@ -634,6 +634,272 @@ header.fixed .util .search .search_open {
                     display: none; /* 숨김 */
                 }
 }/* @media */
-footer {
-    margin: 1000px 0 0 0;
+
+.story {
+    margin: 156px 0 0 0;
 }
+.story .wrapper {
+    position: relative; /* ctrl_btn, more 정렬의 기준 */
+}
+.story .list {
+    margin: 52px 0 0 0;
+}
+.story .list .swiper-slide a {
+    display: block;
+}
+.story .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 280px;
+}
+.story .list .swiper-slide.long a .photo {
+    height: 420px; 
+}
+.story .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.story .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.story .list .swiper-slide a .txt h3 {
+    font-size: 24px;
+    color: #111111;
+    margin: 21px 0 0 0;
+    /* 무조건 2줄  제한*/
+    line-height: 1.3;
+    height: 2.6em; /* 행간*2 = 단위는 em */
+    overflow: hidden;
+}
+.story .list .swiper-slide a .txt p {
+    margin: 10px 0 0 0;
+    /* 무조건 5줄 제한 */
+    line-height: 1.5;
+    height: 7.5em; /* 행간*2 = 단위는 em */
+    overflow: hidden;
+}
+.story .list .swiper-slide.long a .txt p {
+    display: none;
+}
+.story .list .swiper-slide a .txt span {
+    display: inline-block;
+    margin: 21px 0 0 0;
+    color: #6C4B44;
+    padding: 0 30px 0 0;
+    position: relative;
+}
+.story .list .swiper-slide a .txt span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.9327 7.07422L6.85084 0.992354L7.60001 0.249217L14.95 7.59922L7.60001 14.9492L6.85084 14.2061L12.9327 8.12422L0.250012 8.12422L0.250012 7.07422L12.9327 7.07422Z' fill='%236C4B44'/%3E%3C/svg%3E%0A");
+}
+.story .ctrl_btn {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 123px;
+    top: 18px;
+    display: flex;
+    gap: 0 9px;
+}
+.story .ctrl_btn button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #6C4B44;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.41621 9.85039L10.2962 15.7304L8.79996 17.2004L0.399963 8.80039L8.79996 0.400391L10.2962 1.87039L4.41621 7.75039L17.2 7.75039V9.85039L4.41621 9.85039Z' fill='%236C4B44'/%3E%3C/svg%3E%0A");
+}
+.story .ctrl_btn button.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+.story .ctrl_btn button.btn_next {
+    transform: rotate(180deg);
+}
+.story .more {
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+.story .more a {
+    display: block;
+    padding: 3px 50px 3px 12px;
+    border: 1px solid #6C4B44;
+    border-radius: 20px;
+    background-color: #F6F3EC;
+    color: #6C4B44;
+    position: relative;
+}
+.story .more a::after {
+    content: "";
+    position: absolute;
+    right: 13px;
+    top: 11px;
+    width: 11px;
+    height: 11px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.25 6.75H0.75V5.25H5.25V0.75H6.75V5.25H11.25V6.75H6.75V11.25H5.25V6.75Z' fill='%236C4B44'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px){
+                .story {
+                    margin: 97px 0 0 0;
+                }
+                .story .list {
+                    margin: 25px 0 0 0;
+                }
+                .story .list .swiper-slide {
+                    width: 200px;
+                }
+                .story .list .swiper-slide a .photo {
+                    height: 200px;
+                }
+                .story .list .swiper-slide.long a .photo {
+                    height: 200px; 
+                }
+                .story .list .swiper-slide a .txt h3 {
+                    font-size: 18px;
+                    margin: 23px 0 0 0;
+                }
+                .story .list .swiper-slide a .txt p {
+                    margin: 14px 0 0 0;
+                    /* 무조건 5줄 제한 -> 2줄 */
+                    height: 3em; /* 행간*2 = 단위는 em */
+                }
+                .story .list .swiper-slide.long a .txt p {
+                    display: block;
+                }
+                .story .list .swiper-slide a .txt span {
+                    display: none;
+                }
+                .story .ctrl_btn {
+                    display: none;
+                }
+                .story .more {
+                    top: 0;
+                }
+                .story .more a {
+                    padding: 0;
+                    border: none;
+                    border-radius: 0;
+                    background-color: transparent;
+                }
+                .story .more a::after {
+                    display: none;
+                }
+}/* @media */
+footer {
+    margin: 125px 0 0 0;
+    background-color: #231816;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 90px 0 99px 0;
+    position: relative; /* top버튼 정렬의 기준 */
+}
+footer .top {
+    position: absolute;
+    right: 3%;
+    bottom: 100px;
+    width: 49px;
+    height: 49px;
+    background-color: #F6F3EC;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.49219 5.45586L1.72552 12.2225L0.0338531 10.5007L9.70052 0.833984L19.3672 10.5007L17.6755 12.2225L10.9089 5.45586L10.9089 20.1673L8.49219 20.1673L8.49219 5.45586Z' fill='%236C4B44'/%3E%3C/svg%3E%0A");
+}
+footer .wrapper {
+    display: flex; /* slogan - f_info 좌우 배치 */
+    justify-content: space-between;
+    position: relative; /* copyright 정렬의 기준 */
+}
+footer .slogan {
+    color: #fff;
+    font-family: "Eulyoo1945";
+    font-size: 28px;
+    line-height: 1.3;
+}
+/*
+    <div class="f_info">
+        <div class="group"></div>   --- 얜 적용 안됨XXX 
+        <div class="group"></div>   --- 앞에 group이라는 클래스가 있는 group
+        <div class="group"></div>   --- 앞에 group이라는 클래스가 있는 group
+    </div>
+*/
+footer .f_info .group + .group {
+    margin: 34px 0 0 0;
+}
+footer .f_info .group h3 {
+    font-family: "Eulyoo1945";
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0 0 10px 0;
+}
+footer .f_info .group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 32px;
+}
+footer .copyright {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+footer .copyright .f_logo img {
+    width: 162px;
+    /* 이미지에 넓이만 주면 높이는 비율에 맞게 들어감 */
+}
+footer .copyright p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 12px 0 0 0;
+}
+
+@media screen and (max-width:768px){ 
+            footer {
+                margin: 102px 0 0 0;
+                padding: 97px 0 99px 0;
+            }
+            footer .top {
+                right: 16px;
+                bottom: auto;
+                top: -19px;
+                width: 43px;
+                height: 43px;
+                background-color: #6C4B44;
+                border-radius: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.61526 4.07253L1.67717 10.0106L0.192644 8.49959L8.67564 0.0166012L17.1586 8.49959L15.6741 10.0106L9.73601 4.07253L9.73601 16.9826L7.61526 16.9826L7.61526 4.07253Z' fill='white'/%3E%3C/svg%3E%0A");
+                box-shadow: -3px -3px 5px 0 rgba(0, 0, 0, 0.1);
+            }
+            footer .wrapper {
+                display: block; /* flex -> block */
+            }
+            footer .slogan {
+                font-size: 20px;
+                margin: 0 0 56px 0;
+            }
+            footer .f_info .group + .group {
+                margin: 30px 0 0 0;
+            }
+            footer .f_info .group h3 {
+                font-size: 18px;
+                margin: 0 0 5px 0;
+            }
+            footer .f_info .group ul {
+                gap: 0 26px;
+            }
+            footer .copyright {
+                position: relative; /* absolute -> 해제 */
+                left: auto;
+                bottom: auto;
+                margin: 65px 0 0 0;
+            }
+            footer .copyright .f_logo img {
+                width: 138px;
+            }
+}/*@media*/
