@@ -1,0 +1,268 @@
+@import url(common.css);
+
+.plus {
+    margin: 125px 0 0 0;
+}
+.plus .wrapper {
+    display: flex; /* tit - photo 좌우배치 */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.plus .tit {
+    width: 40.39%; 
+    /* 1260에서 넓이 509 
+       509 / 1260 * 100 = 40.39 */
+    margin: 30px 0 0 0;
+}
+.plus .photo {
+    width: 49.04%;
+    /* 1260에서 넓이 618 
+       618 / 1260 * 100 = 49.04 */
+    border-radius: 20px;
+}
+.plus .photo img {
+    vertical-align: top; /* 이미지 하단 여백 삭제 */
+}
+.plus .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 20px 0;
+}
+@media screen and (max-width:1024px){
+    .plus .tit h2 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){
+            .plus {
+                margin: 91px 0 0 0;
+            }
+            .plus .wrapper {
+                display: block; 
+                /* flex -> block  좌우정렬X 위아래 정렬 */
+            }
+            .plus .tit {
+                width: auto; 
+                /* 넓이 고정을 값을 삭제하고 원래 
+                   tit이 가져야하는 넓이값을 줌
+                   block요소면 100% */
+                margin: 0 0 29px 0;
+            }
+            .plus .photo {
+                width: auto;
+                border-radius: 10px;
+            }
+            .plus .tit h2 {
+                font-size: 24px;
+                margin: 0 0 13px 0;
+            }
+}/* media */
+
+.support {
+    margin: 108px 0 0 0;
+}
+.support .wrapper {
+    display: flex; /* tit - photo 좌우배치 */
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.support .tit {
+    /* 넓이가 고정 */
+    width: 509px;
+    margin: 30px 0 0 0;
+}
+.support .photo {
+    /* tit의 넓이 빼고 나머지 - 넓이가 변경됨 */
+    width: calc(100% - 640px);
+    height: 377px;
+    border-radius: 20px;
+}
+.support .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 20px 0;
+}
+@media screen and (max-width:1024px){
+    .support .tit {
+        /* 넓이가 고정 */
+        width: 400px;
+    }
+    .support .photo {
+        width: calc(100% - 440px);
+    }
+    .support .tit h2 {
+        font-size: 32px;
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+        .support {
+            margin: 97px 0 0 0;
+        }
+        .support .wrapper {
+            display: block; 
+        }
+        .support .tit {
+            width: auto;
+            margin: 0 0 29px 0;
+        }
+        .support .photo {
+            width: auto;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .support .tit h2 {
+            font-size: 24px;
+            margin: 0 0 13px 0;
+        }
+}/* media */
+
+.minus {
+    margin: 110px 0 0 0;
+}
+.minus .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.minus .tit {
+    width: 40%;
+    margin: 30px 0 0 0;
+}
+.minus .photo {
+    width: 50%;
+    height: 377px;
+    border-radius: 20px;
+}
+.minus .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 20px 0;
+}
+@media screen and (max-width:1024px){
+    .minus .tit h2 {
+        font-size: 32px;
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+        .minus {
+            margin: 80px 0 0 0;
+        }
+        .minus .wrapper {
+            display: block;
+        }
+        .minus .tit {
+            width: auto;
+            margin: 0 0 18px 0;
+        }
+        .minus .photo {
+            width: auto;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .minus .tit h2 {
+            font-size: 24px;
+            margin: 0 0 13px 0;
+        }
+}/*@media*/
+
+.service {
+    background-color: #1549A4;
+    color: #fff;
+    padding: 74px 0 73px 0;
+    margin: 100px 0 0 0;
+}
+.service .list ul {
+    display: flex; /* li를 좌우로 배치 */
+}
+.service .list ul li {
+    width: 16.66%;
+    /* 나를 감싸는 ul의 넓이의 16% */
+}
+.service .list ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0 18px;
+}
+.service .list ul li a i {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    /* svg를 가운데 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service .list ul li a span {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+@media screen and (max-width:1320px){ /* wrapper 넓이가 풀린 시점 */
+    .service .list ul li a {
+        /* a안에서 좌우에 가운데 flex로 */
+        flex-direction: column;
+        gap: 12px 0;
+    }
+    .service .list ul li a span br {
+        display: none; /* 줄바꿈 삭제 */
+    }
+}/*@media*/
+@media screen and (max-width:1024px){
+    .service .list ul li a span {
+        font-size: 17px;
+        text-align: center;
+    }
+    .service .list ul li a span br {
+        display: block; /* 줄바꿈 다시사용 */
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+    .service {
+        padding: 69px 0 82px 0;
+        margin: 95px 0 0 0;
+    }
+    .service .list ul {
+        flex-wrap: wrap; /* 여러줄 허용 */
+        gap: 54px 0; /* li와 li 위아래 여백 */
+    }
+    .service .list ul li {
+        width: 33.33%;
+    }
+    .service .list ul li a {
+        gap: 4px 0; /* 글자와 아이콘 위아래 여백 */
+    }
+    .service .list ul li a i {
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+    }
+    .service .list ul li a i svg {
+        width: 95%;
+        height: 95%;
+        /* 감싸는 영역이 svg에 써있는 사이즈보다 작으면 
+           자동으로 사이즈가 줄어듬  */
+    }
+    .service .list ul li a i svg path {
+        fill: #fff;
+        /* 내가 복사한 svg html에 path에 fill이 들어가 있음
+           그래서 path에 fill을 줘야함 */
+    }
+    .service .list ul li a span br {
+        display: none; /* 줄바꿈 없음 */
+    }
+}/*@media*/
+@media screen and (max-width:460px){
+    .service .list ul li {
+        width: 50%;
+    }
+}/*@media*/
+
+body {
+    margin: 0 0 500px 0;
+}
