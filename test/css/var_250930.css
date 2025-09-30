@@ -1,0 +1,284 @@
+@import url(common.css);
+
+.test {
+    margin: 50px 0 0 0;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+.news {
+    margin: 169px 0 0 0;
+}
+
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 17px 0;
+}
+.news .tit h2 span {
+    display: block; /* span태그와 다른글자가 줄바꿈이 발생 */
+}
+.news .wrapper {
+    display: flex; /* tit-list좌우 */
+    position: relative; /* more 정렬의 기준 */
+}
+.news .tit {
+    width: 34%;
+}
+.news .list {
+    width: 66%;
+    /*   832px가 1260px안에서 몇%  
+        832 / 1260 * 100 = 66.03174603174604 */
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex; /* h3-span 좌우 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 26px 0;
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+
+    width: calc(100% - 125px); 
+    /* 날짜는 길이가 변경X 제목의 길이는 날짜의 고정 넓이 빼고 나머지 전체 */
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.news .more a {
+    display: flex; /* span - i 좌우배치 */
+    align-items: center;
+    gap: 0 11px;
+}
+.news .more a i {
+    width: 7px;
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+        .news {
+            margin: 95px 0 0 0;
+        }
+        .news .tit h2 {
+            margin: 0;
+        }
+        .news .tit h2 span {
+            display: none; /* 모바일에서 글자숨김 */
+        }
+        .news .tit p {
+            display: none; /* 모바일에서 글자숨김 */
+        }
+        .news .wrapper {
+            display: block; /* tit-list 위아래 (flex해제) */
+        }
+        .news .tit {
+            width: auto;
+        }
+        .news .list {
+            width: auto;
+            margin: 30px 0 0 0;
+        }
+        .news .list ul li a {
+            display: block; /* h3-span 위아래 (flex해제) */
+            padding: 20px 0 14px 0;
+        }
+        .news .list ul li a h3 {
+            width: auto; 
+            /* 1줄제한 - 무제한 */
+            white-space: wrap;
+            overflow: visible;
+        }
+        .news .more {
+            left: auto;
+            right: 0; 
+            /* 정렬값이 left - right로 변경되면 반드시 
+               left를 auto로 해제하고 right를 줘야함 */
+            bottom: auto;
+            top: 0;
+        }
+        .news .more a {
+            justify-content: center; 
+            /* i를 가운데 배치해야하는데 flex를 유지하고 flex로 정렬 */
+            gap: 0;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #666;
+            border-radius: 50%;
+        }
+        .news .more a span {
+            display: none; /* 글자숨김 */
+        }
+        .news .more a i {
+            width: 6px;
+        }
+}
+
+.notice {
+    margin: 97px 0 0 0;
+    padding: 164px 0 104px 0;
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 17px 0;
+}
+.notice .tit h2 span {
+    display: block; 
+    /* span태그와 다른글자가 줄바꿈이 발생 
+       span태그가 block요소가 되면 다른 태그나 글자가 옆에 존재할 수 없음 
+       자동으로 다음 글자는 줄이 바뀌게 됨 */
+}
+.notice .wrapper {
+    display: flex; /* tit-list좌우 */
+    justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
+}
+/* tit은 넓이 안줌 */
+.notice .list {
+    max-width: 832px;  /*최대넓이 */
+    width: calc(100% - 235px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.notice .list ul li a {
+    display: flex; /* h3-span 좌우배치 */
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 26px 0;
+}
+.notice .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    color: #fff;
+
+    width: calc(100% - 125px);
+    /* 1줄제한 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+.notice .more a {
+    display: flex; /* span - i 좌우배치 */
+    align-items: center;
+    gap: 0 11px;
+}
+.notice .more a i {
+    width: 7px;
+}
+.notice .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width:768px){
+            .notice {
+                margin: 62px 0 0 0;
+                padding: 100px 0 63px 0;
+            }
+            .notice .tit h2 {
+                margin: 0;
+            }
+            .notice .tit h2 span {
+                display: none; /* 모바일에서 숨김 */
+            }
+            .notice .tit p {
+                display: none; /* 모바일에서 숨김 */
+            }
+            .notice .wrapper {
+                flex-direction: column; /* flex를 유지하고 방향을 세로로 */
+                gap: 30px 0;
+            }
+            /* tit은 넓이 안줌 */
+            .notice .list {
+                max-width: 100%;  /*최대넓이 해제 */
+                width: auto;
+            }
+            .notice .list ul li a {
+                align-items: flex-start; /* center -> flex-start */
+                flex-direction: column; /* flex를 유지하면서 세로방향전환 */
+                padding: 20px 0 14px 0;
+            }
+            .notice .list ul li a h3 {
+                width: auto;
+                /* 1줄제한 -> 무제한 */
+                overflow: visible;
+                white-space: wrap;
+            }
+            /* absolute -> 일반으로 변경 */
+            .notice .more {
+                position: relative; 
+                /* positon값중에서 다른 값을 줘야하는데 이게 제일 멀쩡 */
+                left: auto;
+                bottom: auto;
+                /* li하고 more의 여백은 wrapper가 준 gap으로 처리 */
+                display: flex;
+                justify-content: center;
+            }
+            .notice .more a {
+                gap: 0 12px;
+                background-color: #555;
+                border-radius: 20px;
+                padding: 5px 26px 5px 27px;
+            }
+}/*@media*/

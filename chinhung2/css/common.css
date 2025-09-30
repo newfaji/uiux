@@ -1,0 +1,43 @@
+/* 모든페이지에서 중복되는 스타일 */
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555;
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+    word-wrap: break-word;
+    /* 단어가 너무 길었을때 강제줄바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    /* overflow: hidden; */
+}
+/* html문서 구조상 글자를 써줘야 하는데
+   그 글자를 안보이게 하고 싶을때 blind 클래스를 주면 사라짐 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+@media screen and (max-width:1320px){ /* 1260+30+30 = 1320 */
+    .wrapper {
+        width: auto; 
+        margin: 0 30px;
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        margin: 0 16px;
+    }
+}/*@media*/

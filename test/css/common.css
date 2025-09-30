@@ -24,9 +24,9 @@
     url(../fonts/Pretendard-ExtraBold.woff) format('woff');
 }
 /* body에 기본 글자 스타일(본문 스타일) 적용 */
-body {
+html, body {
     font-family: 'PT';
-    font-size: 17px;
+    font-size: var(--base-font-size);
     font-weight: 400;
     color: #555; /* 555555 => 6글자가 같으면 3개만 써도됨 */
     line-height: 1.5;
@@ -97,26 +97,47 @@ button {
     object-fit: cover;
 }
 /*
-    계속(태블릿, 모바일) 좌우여백을 16px을 적용
-    1260 + 16 + 16 = 1292 
-    1260 + 30 + 30 = 1320
+    좌우여백 5% - 1260*0.1(5%+5%=10%) + 1260 = 126+1260 = 1386
+    좌우여백 3% - 1260*0.06(3%+3%=6%) + 1260 = 75.6 + 1260 = 1335.6
 
-    좌우의 여백을 가변 %로 적용
-    1260*0.1(5%+5%=10%) + 1260 = 126 + 1260 = 1386
-    1260*0.06(3%+3%=6%) + 1260 = 75.6 + 1260 = 1336
+    좌우여백 50px - 1260+100(50+50=100px) = 1360
+    좌우여백 30px - 1260+60(30+30=60) = 1320
 */
 @media screen and (max-width:1320px){
-                .wrapper {
-                    width: auto;
-                    margin: 0 30px; 
-                }
-}
+                    .wrapper {
+                        width: auto;
+                        margin: 0 30px;
+                    }
+}/*@media */
 @media screen and (max-width:768px){
     /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-                    body {
-                        font-size: 16px;
-                    }
                     .wrapper {
                         margin: 0 16px; 
                     }
+}/*@media */
+
+/* css변수 - 값은 media를 이용해서 수치는 변경가능
+   선언한 변수를 css에서 사용방법은 font-size: var(--base-font-size); 
+   앞에 -- 두개는 반드시 포함되어야함
+   figma dev모드 사용하면 많이 나옴 ... 그래서 많이 씀 */
+:root { 
+    --base-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --h3-font-size: 22px;
+    --tit-line-height: 1.3;
+    --bold-weight: 800;
+}
+@media screen and (max-width:1024px){
+    :root {
+        --tit-font-size: 32px;
+        --h3-font-size: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    :root {
+        --base-font-size: 16px;
+        --tit-font-size: 24px;
+        --h3-font-size: 18px;
+    }
 }/*@media */

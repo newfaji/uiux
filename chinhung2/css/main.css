@@ -1,0 +1,172 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* wrap을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    color: #fff;
+}
+header .wrapper {
+    display: flex; /* logo- gnb 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 124px;
+    height: 33px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+    /* 로고가 짤리지 않고 모두 나와야 하기 때문에 contain */
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 둘다 모바일에서만 보임 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex; /* li를 좌우에 배치 */
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 100px; /* header의 높이와 동일하게 */
+    font-size: 22px;
+    font-weight: 800;
+    padding: 0 25px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 800px;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 323px 0 17px 0;
+}
+
+.biz {
+    margin: 171px 0 0 0;
+}
+.biz .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.biz .tit strong {
+    color: #174193;
+}
+.biz .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 8px 0 0 0;
+}
+.biz .list {
+    margin: 49px 0 0 0;
+}
+.biz .list ul {
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: space-between;
+}
+.biz .list ul li {
+    width: calc(25% - 18px);
+    /* 100%/한줄에 나오는 li의 갯수(4) = 100/4 = 25%
+       한줄 사이의 여백의합(24+24+24) / 한줄에 나오는 li의 갯수(4) = 72/4 = 18px */
+}
+.biz .list ul li a {
+    display: block;
+}
+.biz .list ul li a .photo {
+    overflow: hidden;
+    height: 350px;
+}
+.biz .list ul li a .txt {
+    margin: 0 20px 0 20px;
+    text-align: center;
+}
+.biz .list ul li a .txt h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 32px 0 8px 0;
+}
+.biz .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 104px;
+}
+.biz .more a {
+    display: flex; /* span-i태그를 좌우로 배치 */
+    gap: 0 8px;
+}
+
+.brand {
+    margin: 104px 0 0 0;
+    background: url(../images/brand_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    height: 800px;
+}
+.brand strong {
+    color: #C1E5FF;
+    padding: 192px 0 0 0;
+    display: block;
+}
+.brand h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 17px 0 18px 0;
+}
+.brand a {
+    display: inline-flex; /* em-i를 좌우로 배치 */
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 30px; /* 실제 들어값 보다 크게 */
+    padding: 14px 32px 13px 32px;
+    gap: 0 31px; /* 아이콘과 글자사이 */
+    margin: 38px 0 0 0;
+}
+
+footer {
+    background-color: #2D2D2D;
+    color: rgba(255,255,255,0.8);
+    padding: 76px 0 80px 0;
+}
+footer .f_nav ul {
+    display: flex; /* li를 좌우로 배치 */
+    gap: 0 42px;
+    flex-wrap: wrap; /* 2줄허용 */
+}
+footer .f_nav ul li {
+    position: relative; /* 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -21px;
+    top: 6px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.2);
+}
+footer .f_nav ul li:last-child::after {
+    display: none; /* 마지막 li의 after를 숨김처리 */
+}
+footer .f_nav ul li.privacy {
+    font-weight: 800;
+}
+footer .f_info {
+    margin: 22px 0 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 30px;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
