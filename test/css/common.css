@@ -103,18 +103,13 @@ button {
     좌우여백 50px - 1260+100(50+50=100px) = 1360
     좌우여백 30px - 1260+60(30+30=60) = 1320
 */
-@media screen and (max-width:1320px){
+@media screen and (max-width:1360px){
                     .wrapper {
                         width: auto;
-                        margin: 0 30px;
+                        margin: var(--content-margin);
                     }
 }/*@media */
-@media screen and (max-width:768px){
-    /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-                    .wrapper {
-                        margin: 0 16px; 
-                    }
-}/*@media */
+
 
 /* css변수 - 값은 media를 이용해서 수치는 변경가능
    선언한 변수를 css에서 사용방법은 font-size: var(--base-font-size); 
@@ -127,11 +122,13 @@ button {
     --h3-font-size: 22px;
     --tit-line-height: 1.3;
     --bold-weight: 800;
+    --content-margin: 0 50px;
 }
 @media screen and (max-width:1024px){
     :root {
         --tit-font-size: 32px;
         --h3-font-size: 20px;
+        --content-margin: 0 30px;
     }
 }
 @media screen and (max-width:768px){
@@ -139,5 +136,6 @@ button {
         --base-font-size: 16px;
         --tit-font-size: 24px;
         --h3-font-size: 18px;
+        --content-margin: 0 16px;
     }
 }/*@media */

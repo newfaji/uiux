@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- 라이브러리 파일 -->
+
+    <!-- 내가 만든 파일 -->
+    <script src="js/menu_251002.js"></script>
+    <link rel="stylesheet" href="css/menu_251002.css">
+    <title>pc&모바일 메뉴 구현(완전판)</title>
+</head>
+<body>
+    <div id="wrap">
+        <!--
+            pc버전(1025px이상)에서 메뉴에 마우스를 오버하면 menu_over 추가
+            모바일 버전 (1024px이하)에서 메뉴 여는 버튼을 클릭하면 menu_open 추가
+        -->
+        <header>
+            <h1 class="logo"><a href="#n"><span class="blind">로고</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!--
+                            pc버전에서 1차메뉴 올리면 over 클래스 추가
+                            모바일 버전에서 1차메뉴가 열리면 open 클래스 추가
+                        -->
+                        <li>
+                            <a href="https://www.hd.com/kr/main"><span>을유문화사</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유1945</span></a></li>
+                                <li><a href="#n"><span>출판사 소개</span></a></li>
+                                <li><a href="#n"><span>인사말</span></a></li>
+                                <li><a href="#n"><span>아카이브</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>콘텐츠</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>스테디셀러</span></a></li>
+                                <li><a href="#n"><span>전체 도서</span></a></li>
+                                <li><a href="#n"><span>작가 소개</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>을유소식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>새소식</span></a></li>
+                                <li><a href="#n"><span>자료실</span></a></li>
+                                <li><a href="#n"><span>이벤트</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>독자참여</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유 북클럽</span></a></li>
+                                <li><a href="#n"><span>원고투고</span></a></li>
+                                <li><a href="#n"><span>1:1문의</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div><!--gnb_wrap-->
+                <div class="gnb_bg"></div>
+            </nav><!--gnb-->
+            <div class="util">
+                <div class="lang">
+                    <button class="lang_open"><span class="blind">언어선택 열기</span></button>
+                </div>
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색 열기</span></button>
+                </div>
+            </div><!--util-->
+        </header>
+        <main class="container">
+            <section class="visual">
+            </section>
+        </main>
+    </div>
+</body>
+</html>
