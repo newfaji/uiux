@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 라이브러리 파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- 내가 만든 파일 -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>유기동물 보호소</title>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <div class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide  pop1">
+                            <div class="wrapper">
+                                <p>사랑은 잃지 않아요, <br> 다시 만나기까지 <br> 우리가 곁에 있을게요</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide  pop2">
+                            <div class="wrapper">
+                                <p>잃어버린 가족을 찾고, <br> 새로운 사랑을 이어주는 <br> 따뜻한 이야기</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide  pop3">
+                            <div class="wrapper">
+                                <p>작은 발자국이 <br> 다시 집으로 돌아올 수 있도록, <br> 우리가 함께합니다</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+                <div class="ctrl_btn">
+                    <div class="paging">
+                        <div class="current">현재팝업번호</div>
+                        <div class="bar"><span></span></div>
+                        <div class="total">전체팝업번호</div>
+                    </div>
+                    <button class="stop">
+                        <span class="blind">일시정지</span>
+                        <i>
+                            <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 11.25C7.5875 11.25 7.23438 11.1031 6.94063 10.8094C6.64688 10.5156 6.5 10.1625 6.5 9.75V2.25C6.5 1.8375 6.64688 1.48438 6.94063 1.19063C7.23438 0.896875 7.5875 0.75 8 0.75C8.4125 0.75 8.76562 0.896875 9.05938 1.19063C9.35313 1.48438 9.5 1.8375 9.5 2.25V9.75C9.5 10.1625 9.35313 10.5156 9.05938 10.8094C8.76562 11.1031 8.4125 11.25 8 11.25ZM2 11.25C1.5875 11.25 1.23438 11.1031 0.940625 10.8094C0.646875 10.5156 0.5 10.1625 0.5 9.75V2.25C0.5 1.8375 0.646875 1.48438 0.940625 1.19063C1.23438 0.896875 1.5875 0.75 2 0.75C2.4125 0.75 2.76562 0.896875 3.05938 1.19063C3.35313 1.48438 3.5 1.8375 3.5 2.25V9.75C3.5 10.1625 3.35313 10.5156 3.05938 10.8094C2.76562 11.1031 2.4125 11.25 2 11.25Z" fill="white"/>
+                            </svg>                                
+                        </i>
+                    </button>
+                    <button class="play">
+                        <span class="blind">재생</span>
+                        <i>
+                            <svg viewBox="0 0 8 10" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.25625 4.36211C7.36875 4.43711 7.45313 4.53086 7.50938 4.64336C7.56563 4.75586 7.59375 4.87461 7.59375 4.99961C7.59375 5.12461 7.56563 5.24336 7.50938 5.35586C7.45313 5.46836 7.36875 5.56211 7.25625 5.63711L1.14375 9.51836C1.08125 9.55586 1.01563 9.58398 0.946875 9.60273C0.878125 9.62148 0.8125 9.63086 0.75 9.63086C0.55 9.63086 0.375 9.55898 0.225 9.41523C0.0750003 9.27148 4.69897e-08 9.09336 6.55671e-08 8.88086L7.44186e-07 1.11836C7.62764e-07 0.905857 0.0750011 0.727733 0.225001 0.583983C0.375001 0.440233 0.550001 0.368358 0.750001 0.368358C0.812501 0.368358 0.878126 0.377733 0.946875 0.396483C1.01563 0.415233 1.08125 0.443358 1.14375 0.480858L7.25625 4.36211Z" fill="white"/>
+                            </svg>                                
+                        </i>
+                    </button>
+                </div>
+            </section><!--visual-->
+            <section class="find"></section><!--find-->
+            <section class="slogan"></section><!--slogan-->
+            <section class="adopt"></section><!--adopt-->
+            <section class="review"></section><!--review-->
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>
