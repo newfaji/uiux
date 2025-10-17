@@ -23,6 +23,7 @@
     --color-line : #cccccc;
     --color-line2 : #ededed;
     --header-h : 90px;
+    --header-var : clamp(56px, 9vw, 90px);
     --wrapper-margin : 30px;
 }
 @media screen and (max-width:768px){
