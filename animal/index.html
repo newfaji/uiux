@@ -155,9 +155,14 @@
                     <div class="tab_list">
                         <ul>
                             <!-- 선택된 탭에는 active 클래스 추가
-                                 button안에 span태그한테 선택됨이라고 글자를 써줌 -->
-                            <li class="item1 "><button>가족을 <span class="blind">선택됨</span></button></li>
-                            <li class="item2 active"><button>주인을 <span class="blind"></span></button></li>
+                                 button안에 span태그한테 선택됨이라고 글자를 써줌 
+                                 각자의 li에 li를 클릭하면 보일 tab_item의 이름을 써주는 게 좋음 
+                                 나를 클릭하면 tab_item 중에 item1을 보이게 해줘 라고 기록해 놓는게 좋음
+                                 그런데 class는 중복해서 다양한 값이 들어가서 class값 하기는 어려움
+                                 그래서 별도의 속성명을 써서 사용 data-명칭 속성 
+                                 css에서 공식으로 지정되어 있는 속성이 아닌 퍼블이 임의로 만든 속성 (많이 씀) -->
+                            <li class="item1 active" data-tab="item1"><button>가족을 <span class="blind">선택됨</span></button></li>
+                            <li class="item2 " data-tab="item2"><button>주인을 <span class="blind"></span></button></li>
                         </ul>
                     </div><!--tab_list-->
                     <div class="tab_content">
@@ -175,14 +180,14 @@
                                                 </div>
                                                 <div class="txt">
                                                     <h4>
-                                                        <strong>포메라니안</strong>
+                                                        <strong>포메라니안 가나라다라마바사아자차카파타하</strong>
                                                         <span>암컷</span>
                                                     </h4>
                                                     <ul>
                                                         <li>
                                                             <strong class="pc_only">실종장소</strong>
                                                             <strong class="mo_only">장소</strong>
-                                                            <span>	경기 송산면 천등리 천하농산 근처</span>
+                                                            <span>경기 송산면 천등리 천하농산 근처</span>
                                                         </li>
                                                         <li>
                                                             <strong class="pc_only">실종날짜</strong>
@@ -450,7 +455,7 @@
                                 </a>
                             </div>
                         </div><!--tab_item-->
-                        <div class="tab_item item2">
+                        <div class="tab_item item2 ">
                             <h3 class="blind">주인을</h3>
                             <div class="list">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
@@ -709,8 +714,153 @@
                     </div><!--tab_content-->
                 </div><!--wrapper-->
             </section><!--find-->
-            <section class="slogan"></section><!--slogan-->
-            <section class="adopt"></section><!--adopt-->
+            <section class="slogan">
+                <div class="wrapper">
+                    <h2>공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는 <br>
+                        동물<strong class="animal"></strong>을 발견한 경우 <br>
+                        관할 시군구청 또는<br class="mo_only"> 동물보호센터<strong class="center"></strong>에 <br>
+                        신고<strong class="call"></strong>하시기 바랍니다</h2>
+                    <p>소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 <br>
+                        동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                </div>
+            </section><!--slogan-->
+            <section class="adopt">
+                <div class="tit">
+                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                </div><!--tit-->
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt01.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>비글</h3>
+                                    <p>중성화 완료 착하고 실외배변 및 배변판에 배변해요
+                                        겁이 많아요 작은 강아지들한테 치입니다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt02.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>삽살개믹스</h3>
+                                    <p>영이의 모견은 삽살개 믹스견으로, 영이 역시 그 피를 이어받아 꼬불거리는 삽살개 특
+                                        유의 독특한 비주얼을 갖고 태어났어요.</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt03.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>삽살개믹스</h3>
+                                    <p>흑미의 모견은 삽살개 믹스견으로, 흑미 역시 그 피를 이어받아 정말 독특한 비주얼을
+                                        가지고 있어요. 흑미처럼 생긴 강아지는 한번도 보지 못했습니다!</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt04.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>진도믹스</h3>
+                                    <p>헤이는 한 노인이 잡아먹기 위해 기르던 처참한 환경의 뜬장에서 구출된 아이예요. 강제교배로 인해 다섯 새끼들을 낳은 상태로 폭
+                                        염 속에서 발견되었습니다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt05.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>비글</h3>
+                                    <p>아이라인이 매력적인 실험 비글 수정이 아직은 모든게 낯설고 두려워 시간이 필요해요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt06.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>말티푸</h3>
+                                    <p>지금은 잠깐 검진과 치료를 위해 털을 민 상태인데, 벌써부터 이목구비가 오밀조밀한게 너무 귀엽죠</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt07.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>푸들</h3>
+                                    <p>주보호자 껌딱지에요, 어디든 졸졸 따라다니고 항상 옆에 있어요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt08.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>한국 고양이</h3>
+                                    <p>혼자 길에서 울고잇어 근처사는 아가씨가 지나가다 구조해서 임보처에 잇어요</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt09.jpg" alt=""></div>
+                                    <div class="cate cate2">암컷</div>
+                                    <h3>스코티쉬 폴드</h3>
+                                    <p>귀여운 스코티쉬폴드아가에요 사람정말좋아하구요 완전개냥이에요 이름은츄입니다.저희가이번에 이사로인해 집주인이
+                                        동물이 안된다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt10.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>믹스견</h3>
+                                    <p>사람을 너무 좋아하는 구리의 가족을 기다립니다</p>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/adopt11.jpg" alt=""></div>
+                                    <div class="cate cate1">수컷</div>
+                                    <h3>포메라니안</h3>
+                                    <p>청주시보호소 구조된 강아지입니다</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--list-->
+                <div class="ctrl_btn">
+                    <button class="prev">
+                        <span class="blind">이전팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.8248 8.9998L8.7248 13.8998C8.9248 14.0998 9.02064 14.3331 9.01231 14.5998C9.00397 14.8665 8.89981 15.0998 8.69981 15.2998C8.49981 15.4831 8.26647 15.579 7.9998 15.5873C7.73314 15.5956 7.4998 15.4998 7.2998 15.2998L0.699805 8.69981C0.599805 8.5998 0.528971 8.49147 0.487305 8.3748C0.445638 8.25814 0.424805 8.13314 0.424805 7.9998C0.424805 7.86647 0.445638 7.74147 0.487305 7.6248C0.528971 7.50814 0.599805 7.3998 0.699805 7.2998L7.2998 0.699805C7.48314 0.516471 7.7123 0.424805 7.9873 0.424805C8.2623 0.424805 8.49981 0.516471 8.69981 0.699805C8.89981 0.899805 8.9998 1.1373 8.9998 1.4123C8.9998 1.6873 8.89981 1.9248 8.69981 2.1248L3.8248 6.9998H14.9998C15.2831 6.9998 15.5206 7.09564 15.7123 7.2873C15.904 7.47897 15.9998 7.71647 15.9998 7.9998C15.9998 8.28314 15.904 8.52064 15.7123 8.71231C15.5206 8.90397 15.2831 8.9998 14.9998 8.9998H3.8248Z" />
+                            </svg>
+                        </i>
+                    </button>
+                    <button class="next">
+                        <span class="blind">다음팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1752 7.0002L7.2752 2.10019C7.0752 1.90019 6.97936 1.66686 6.9877 1.40019C6.99603 1.13353 7.1002 0.900194 7.3002 0.700195C7.5002 0.516861 7.73353 0.421027 8.0002 0.412694C8.26686 0.404361 8.5002 0.500195 8.7002 0.700195L15.3002 7.30019C15.4002 7.4002 15.471 7.50853 15.5127 7.6252C15.5544 7.74186 15.5752 7.86686 15.5752 8.0002C15.5752 8.13353 15.5544 8.25853 15.5127 8.3752C15.471 8.49186 15.4002 8.6002 15.3002 8.7002L8.7002 15.3002C8.51686 15.4835 8.2877 15.5752 8.0127 15.5752C7.7377 15.5752 7.50019 15.4835 7.30019 15.3002C7.10019 15.1002 7.0002 14.8627 7.0002 14.5877C7.0002 14.3127 7.1002 14.0752 7.30019 13.8752L12.1752 9.00019L1.0002 9.00019C0.716862 9.00019 0.479362 8.90436 0.287696 8.71269C0.0960289 8.52103 0.000196141 8.28353 0.000196165 8.00019C0.00019619 7.71686 0.096029 7.47936 0.287696 7.28769C0.479362 7.09603 0.716862 7.00019 1.0002 7.00019L12.1752 7.0002Z" />
+                            </svg>
+                        </i>
+                    </button>
+                    <div class="more">
+                        <a href="#n">
+                            <span class="blind">더보기</span>
+                            <i>
+                                <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z" />
+                                </svg>                                    
+                            </i>
+                        </a>
+                    </div>
+                </div><!--ctrl_btn-->
+                <!-- 글자를 감싸고 있는 rolling은 넓이가 브라우저 넓이와 동일 
+                     그 안에 글자를 감싸고 있는 p태그는 글자의 넓이를 그대로 인식해야함 (absolute) -->
+                <div class="rolling">
+                    <p>BECAUSE EVERY LIFE MATTERS. BECAUSE EVERY LIFE MATTERS. BECAUSE EVERY LIFE MATTERS. BECAUSE EVERY LIFE MATTERS.</p>
+                </div>
+            </section><!--adopt-->
             <section class="review"></section><!--review-->
         </div>
         <footer></footer>
