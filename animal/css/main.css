@@ -345,12 +345,27 @@ header.fixed .logo a {
     width: 8px;
     margin: 0 0 3px 0;
 }
+.visual .spin {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    z-index: 10;
+    animation: spin 10s linear infinite;
+    /* 애니메이션이름, 1번 실행하는데 걸리는 시간, 가속도, 무한 반복 */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
 @media screen and (max-width:1320px){
     .visual .ctrl_btn {
         left: 30px;
     }
 }
 @media screen and (max-width:768px){
+            .visual .spin {
+                display: none;
+            }
             .visual .swiper-slide {
                 height: 400px; /* 브라우저 높이와 동일 */
             }
@@ -570,6 +585,7 @@ header.fixed .logo a {
 }/*@media*/
 
 .slogan {
+    position: relative; /* spin 정렬의 기준 */
     margin: clamp(98px, 16vw, 210px) 0 clamp(113px, 11vw, 142px) 0;
     text-align: center;
 }
