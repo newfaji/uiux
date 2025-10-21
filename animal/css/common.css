@@ -56,7 +56,7 @@ body {
 }
 #wrap {
     position: relative; /* header 정렬의 기준 */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 /* html문서 구조상 글자를 써줘야 하는데
    그 글자를 안보이게 하고 싶을때 blind 클래스를 주면 사라짐 */

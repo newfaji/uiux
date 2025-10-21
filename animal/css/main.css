@@ -785,6 +785,258 @@ header.fixed .logo a {
     }
 }/* @media */
 
-footer {
-    margin: 1500px 0 0 0;
+.review {
+    margin: clamp(113px, 13vw, 169px) 0 clamp(64px, 9vw, 116px) 0;
 }
+.review .wrapper {
+    position: relative; /* prev, next, more 정렬의 기준 */
+}
+.review h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+    color: var(--color-title);
+    position: relative; /* before 정렬의 기준 */
+    padding: 0 0 12px 0;
+}
+.review h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw; /* 브라우저의 넓이     */
+    height: 1px;
+    background-color: var(--color-line);
+}
+.review h2 span {
+    position: relative; /* before 정렬의 기준 */
+}
+.review h2 span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-main);
+}
+.review .list {
+    margin: clamp(19px, 4vw, 52px) 0 0 0;
+}
+.review .list .swiper-slide {
+    width: 250px;
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 297px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 짤리지 않게 모두 나옴 */
+}
+.review .list .swiper-slide a h3 {
+    margin: 24px 0 15px 0;
+    font-size: var(--font-size-title2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+    color: var(--color-title);
+
+    /* 1줄제한 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.review .list .swiper-slide a p {
+    /* 2줄제한 */
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em; /* 행간*줄수 = 단위는 em */
+
+    /* 브라우저마다 일부는 적용될 수도 있고 안될 수도 있음  */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.review .list .swiper-slide a .date {
+    margin: clamp(14px, 2vw ,24px) 0 0 0;
+    display: flex; /* strong-span 좌우배치 */
+    gap: 0 27px;
+}
+.review .list .swiper-slide a .date strong {
+    color: var(--color-main2);
+    position: relative; /* after 정렬의 기준 */
+}
+.review .list .swiper-slide a .date strong::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: 7px;
+    width: 1px;
+    height: 13px;
+    background-color: var(--color-line);
+}
+.review .list .swiper-slide a .date span {
+    color: var(--color-gray);
+}
+.review .prev,
+.review .next {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: -60px;
+    top: 40%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    fill: var(--color-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review .next {
+    left: auto;
+    right: -60px;
+}
+.review .prev i,
+.review .next i {
+    display: block;
+    width: 15.57px;
+}
+.review .more {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+}
+.review .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+}
+.review .more a strong {
+    color: var(--color-main);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+.review .more a span {
+    color: var(--color-title);
+}
+.review .more a i {
+    display: block;
+    width: 20.53px;
+    fill: var(--color-title);
+    margin-top: 5px;
+}
+@media screen and (max-width:1400px){
+    .review .prev,
+    .review .next {
+        display: none; /* 숨김 */
+    }
+}/*@media*/
+@media screen and (max-width:768px){
+
+    .review .more a {
+        justify-content: center;
+        gap: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: var(--color-main);
+    }
+    .review .more a strong {
+        display: none;
+    }
+    .review .more a span {
+        display: none;
+    }
+    .review .more a i {
+        width: 9px;
+        fill: var(--color-white);
+        margin-top: 0;
+    }
+}/*@media*/
+
+
+footer {
+    background-color: var(--color-title);
+    color: var(--color-white80);
+    padding: 78px 0 80px 0;
+}
+footer .wrapper {
+    position: relative; /* top 버튼 정렬의 기준 */
+}
+footer .top {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: -60px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--color-main2);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display: flex; /* i-span 위아래 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1; /* i-span 둘사이의 여백 */
+}
+footer .top i {
+    display: block;
+    width: 13px;
+}
+footer .top span {
+    font-size: 12px;
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /* 모바일에서 여러줄 */
+    gap: 0 2.1176em;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1em;
+    top: 0.38em;
+    width: 1px;
+    height: 0.7059em;
+    background-color: var(--color-white20);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    margin: 32px 0 27px 0;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block;
+    margin: 0 1.9412em 0 0;
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 101px 0 100px 0;
+    }
+    footer .top {
+        top: 0;
+    }
+    footer .f_nav {
+        margin-right: 70px; /* 오른쪽에 top버튼이 들어갈 자리 */
+    }
+    footer .f_info {
+        margin: 40px 0 34px 0;
+    }
+}/* @media */
