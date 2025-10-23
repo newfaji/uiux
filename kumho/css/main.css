@@ -1,0 +1,139 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 문미영
+* 작성일 : 25-10-23
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative; /* scroll 정렬의 기준 */
+}
+.visual .popup .slide {
+    height: 100dvh;
+    position: relative; /* photo 정렬의 기준 */
+    /* txt를 slide의 하단에 배치 - 넓이가 100% */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .popup .slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .popup .slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale3d(1.2, 1.2, 1);
+    transition: transform 2s;
+}
+.visual .popup .slide.slick-active .photo img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .popup .slide .txt {
+    color: #fff;
+    margin-bottom: 247px;
+}
+.visual .popup .slide .txt h2 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 13px 0;
+}
+@media screen and (min-width:769px){ /* pc버전에서만 동작 */
+    .visual .popup .slide .txt .line {
+        display: block;
+        overflow: hidden;
+    }
+    .visual .popup .slide .txt .line span {
+        transform: translateY(100%);
+        display: block;
+        transition: transform 0.5s;
+        transition-delay: 0.3s;
+    }
+    .visual .popup .slide.slick-active .txt .line span {/* 현재 보이는 팝업에는 */
+        transform: translateY(0);
+    }
+}/*media*/
+
+.visual .scroll {
+    position: absolute;
+    right: 0;
+    bottom: 140px;
+    color: #fff;
+    font-size: 1.5rem;
+    transform: rotate(90deg);
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    bottom: 9px;
+    width: 8px;
+    height: 8px;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    border-color: #fff;
+    transform: rotate(45deg);
+    animation: scroll 3s linear infinite;
+}
+@keyframes scroll {
+    0% { right: -15px; }
+    50% { right: -30px; }
+    100% { right: -15px; }
+}
+
+@media screen and (max-width:1024px){
+    .visual .popup .slide .txt h2 {
+        font-size: 4.4rem;
+    }
+}
+
+@media screen and (max-width:768px){
+            .visual .popup .slide {
+                height: 600px;
+            }
+            .visual .popup .slide .txt {
+                margin-bottom: 56px;
+            }
+            .visual .popup .slide .txt h2 {
+                font-size: 3.2rem;
+                margin: 0 0 24px 0;
+            }
+            .visual .popup .slide .txt h2,
+            .visual .popup .slide .txt p {
+                transform: translateY(50%);
+                opacity: 0;
+                transition: transform 1s, opacity 1s;
+                transition-delay: 0.3s;
+            }
+            .visual .popup .slide.slick-active .txt h2,
+            .visual .popup .slide.slick-active .txt p {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .visual .popup .slide .txt h2 .line {
+                display: block; /* 줄바꿈 */
+            }
+            .visual .scroll {
+                display: none;
+            }
+}/*@media*/
+
+footer {
+    margin: 500px 0 0 0;
+}

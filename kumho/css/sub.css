@@ -1,0 +1,13 @@
+/***********************
+* 파일명 : sub.css 
+* 작성자 : 문미영
+* 작성일 : 25-10-23
+* 설  명 : 메인을 제외한 모든 페이지에서 호출되는 css 파일
+           서브에 필요한 css를 import하는 역할과 
+           서브의 레이아웃을 퍼블리싱함 (서브의 공통스타일)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
