@@ -6,7 +6,7 @@
 *********************/
 $(document).ready(function(){
     $('.visual .popup').slick({
-        autoplay: true, //팝업 자동 실행
+        autoplay: false, //팝업 자동 실행
         autoplaySpeed: 3000, //팝업이 머무는 시간
         speed: 500, //팝업 전환 속도
         fade: true,  //페이드 효과 적용
