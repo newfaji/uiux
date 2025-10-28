@@ -323,3 +323,166 @@ header.up:not(.menu_pc, .menu_mo) {
     }
 }/*@media*/
 
+footer {
+    background-color: var(--color-title);
+    color: rgba(255,255,255,0.8);
+    padding: 85px 0 112px 0;
+}
+footer .wrapper {
+    display: flex; /*f_logo - inner 좌우배치*/
+    gap: 0 54px;
+    position: relative; /* f_util 정렬의 기준 */
+}
+footer .f_logo {
+    width: 109px;
+    height: 36px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+footer .f_util {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 0;
+    display: flex; /* family_site - top이랑 좌우로 배치 */
+    gap: 0 6px;
+}
+footer .f_util .family_site {
+    width: 186px;
+    /* 관련사이트는 여는 버튼, 바로가기 사이트 등의 넓이가 같음
+       그래서 감싸고 있는 family_site에 넓이를 주고 내부요소는 그에 100%를 꽉차게줌 */
+    position: relative; /* family_wrap 정렬의 기준 */
+}
+footer .f_util .family_site .family_open,
+footer .f_util .family_site .family_close {
+    display: block;
+    width: 100%;
+    height: 2.5294em;
+    text-align: left;
+    padding: 0.2941em 0 0 1.1176em;
+    background-color: #3D3D3D;
+    position: relative; /* 정렬의 기준 */
+}
+footer .f_util .family_site .family_open::after,
+footer .f_util .family_site .family_close::after {
+    content: "";
+    position: absolute;
+    right: 1.1176em;
+    top: 1.15em;
+    width: 0.6865em;
+    height: 0.4041em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.03581L5.83333 6.86914L-2.54983e-07 1.03581L1.03542 0.000390484L5.83333 4.79831L10.6312 0.000390065L11.6667 1.03581Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_wrap {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: calc(2.5294em + 1px); /* 하단에 버튼을 포함한 높이 */
+    width: 100%;
+    background-color: #3D3D3D;
+    padding: 1.1765em 1.1176em 1.0588em 1.1176em;
+}
+footer .f_util .family_site .family_wrap ul li a {
+    display: block;
+    padding: 0.1765em 0;
+}
+footer .f_util .family_site .family_wrap ul li a span {
+    position: relative; /* after 정렬 */
+}
+footer .f_util .family_site .family_wrap ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -0.8824em;
+    top: 0.4118em;
+    width: 0.6176em;
+    height: 0.6176em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='white' fill-opacity='0.6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10.5V0H5.25V1.16667H1.16667V9.33333H9.33333V5.25H10.5V10.5H0ZM3.90833 7.40833L3.09167 6.59167L8.51667 1.16667H6.41667V0H10.5V4.08333H9.33333V1.98333L3.90833 7.40833Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_close {
+    display: none;
+}
+
+/* 열렸을때 */
+footer .f_util .family_site.open .family_open {
+    display: none;
+}
+footer .f_util .family_site.open .family_close {
+    display: block;
+}
+footer .f_util .family_site.open .family_close::after {
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+
+footer .f_util .top {
+    height: 2.5294em;
+    padding: 0.2941em 0.9412em 0 0.9412em;
+    background-color: var(--color-main);
+}
+footer .inner {
+    margin: 14px 0 0 0;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.1765em;
+}
+footer .inner .f_info {
+    margin: 31px 0 0 0;
+}
+
+@media screen and (max-width:1280px){
+    footer .wrapper {
+        gap: 0 20px;
+    }
+    footer .inner .f_nav ul {
+        gap: 0 1.5em;
+    }
+}
+@media screen and (max-width:1024px){
+    footer {
+        margin: 64px 0 0 0;
+    }
+    footer .wrapper {
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    footer .f_util {
+        top: 52px;  
+    }
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 51px 0 68px 0;
+    }
+    footer .wrapper {
+        display: block; /*f_logo - inner 좌우배치*/
+    }
+    footer .f_logo {
+        width: 87px;
+        height: 29px;
+    }
+    footer .f_util {
+        position: relative; /* absolute 해제 */
+        right: auto;
+        top: auto;
+        margin: 32px 0 52px 0;
+    }
+    footer .f_util .family_site {
+        width: calc(100% - 73px);
+        max-width: 420px;
+    }
+    footer .inner {
+        margin: 0;
+    }
+    footer .inner .f_info {
+        margin: 22px 0 0 0;
+    }
+}

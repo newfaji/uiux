@@ -1,0 +1,43 @@
+
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+
+.header { background:#13269c; color:#FFF; padding-bottom:70px }
+.header h1 { padding:105px 0 20px 0; font-size:0; line-height:0; }
+.header h1 img { width:44px }
+.header h2 { margin-bottom:45px; font-size:4rem; font-weight:600; line-height:1.1; letter-spacing:-0.05em }
+.header dl { font-size:1rem; color:rgba(255,255,255,0.8) }
+.header dl dt { float:left }
+.header dl dd { margin:0 0 2px 70px }
+
+@media screen and (max-width:1020px){
+	.header { text-align:center; height:auto;}
+	.header dl { display:inline-block; text-align:left; }
+}
+@media screen and (max-width:640px){
+	.header { }
+	.header h1 { padding:25px 0; }
+	.header h2 { margin-bottom:35px; font-size:2.3rem; }
+	.header dl dd { margin-left:70px }
+}
+
+.list { position:relative; margin: 0 0 100px 0; }
+.list::before { position:absolute; left:0; top:0; z-index:-1; width:100%; height:120px; background:#13269c; content:"" }
+.list ul { display:flex; flex-wrap:wrap; margin-left:-1%; }
+.list ul li { width:23%; margin:0 1% 20px 1%; }
+.list ul li a { position:relative; display:block; }
+.list ul li a strong { overflow:hidden; display:block; background:#13269c; box-shadow:3px 3px 10px rgba(0,0,0,0.2) }
+.list ul li a strong img { display:block; width:100%; object-fit:cover; transition:0.5s; }
+.list ul li a span { opacity:0; position:absolute; left:0; top:50%; width:100%; text-align:center; color:#FFF; font-size:1.2rem; font-weight:600; transform:translateY(-50%); transition:0.5s }
+.list ul li a:hover strong img { transform:scale3d(1.1,1.1,1); opacity:0.2 }
+.list ul li a:hover span { opacity:1 }
+
+@media screen and (max-width:1020px){
+	.list ul li { width:31.33%; }
+}
+
+@media screen and (max-width:640px){
+	.list ul li { width:48%; }
+}
