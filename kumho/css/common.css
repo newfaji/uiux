@@ -5,6 +5,7 @@
     --color-main : #E00036;
     --header-h : 90px;
     --wrapper-margin : 30px;
+    --wrapper-margin-m : -30px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -15,6 +16,7 @@
     :root {
         --header-h : 56px;
         --wrapper-margin : 16px;
+        --wrapper-margin-m : -16px;
     }
 }
 html {

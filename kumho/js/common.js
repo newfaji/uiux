@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        console.log(device_status)
+        //console.log(device_status)
     }
 
     device_chk() //문서가 로딩되었을때 1번실행
@@ -68,13 +68,13 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        console.log(diff_scroll)
+        //console.log(diff_scroll)
         if(diff_scroll < 0){ //위로 스크롤 
             $('header').addClass('up')
-            console.log('if냐?')
+            //console.log('if냐?')
         }else{ //아래로 스크롤
             $('header').removeClass('up')
-            console.log('else니?')
+            //console.log('else니?')
         }
         if(scrolling > 0){ //스크롤 내림
             $('header').addClass('fixed')
