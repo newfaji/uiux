@@ -5,3 +5,132 @@
 * 설  명 : 연혁, 인사말 등의 각페이지에만 들어가는 스타일들을 모두 모음..
            이 파일에 있는 css를 수정하면 그 페이지 한개에만 영향을 끼침
 *********************/
+
+/* 회사소개 - CEO인사말 (메뉴명을 써쭘) */
+.ctn_ceo .ceo_head {
+    height: 200dvh;
+    position: relative; /* photo 정렬의 기준 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.ctn_ceo .ceo_head .ceo_photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100dvh;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
+    position: fixed;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
+    transition: width 0.2s, height 0.2s;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+}
+.ctn_ceo .ceo_head .ceo_txt {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ctn_ceo .ceo_head .ceo_txt p {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 33px 0 0 0;
+}
+.ctn_ceo .ceo_cont {
+    margin: 74px 0 80px 0;
+}
+.ctn_ceo .ceo_cont .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_ceo .ceo_cont h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+}
+.ctn_ceo .ceo_cont .inner {
+    width: calc(100% - 417px);
+}
+.ctn_ceo .ceo_cont .inner .sign {
+    margin: 44px 0 0 0;
+    display: flex;
+    gap: 0 28px;
+}
+.ctn_ceo .ceo_cont .inner .sign strong {
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin: 10px 0 0 0;
+}
+.ctn_ceo .ceo_cont .inner .sign .sign_img {
+    display: block;
+    width: 155px;
+    height: 77px;
+    background: url(../images/contents/ceo_sign.jpg) no-repeat center center / contain;
+}
+
+@media screen and (max-width:1024px){
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.5rem;
+        margin: 27px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont {
+        margin: 52px 0 63px 0;
+    }
+    .ctn_ceo .ceo_cont .wrapper {
+        display: block;
+    }
+    .ctn_ceo .ceo_cont h3 {
+        font-size: 2rem;
+    }
+    .ctn_ceo .ceo_cont .inner {
+        width: auto;
+        margin: 17px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont .inner .sign {
+        margin: 32px 0 0 0;
+        gap: 0 14px;
+    }
+    .ctn_ceo .ceo_cont .inner .sign strong {
+        font-size: 1.6rem;
+        margin: 10px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont .inner .sign .sign_img {
+        width: 94px;
+        height: 47px;
+    }
+    
+}/*@media*/
+
+@media screen and (max-width:450px){
+    .ctn_ceo .ceo_head .ceo_txt p br {
+        display: none; /* 줄바꿈 제거 */
+    }
+}

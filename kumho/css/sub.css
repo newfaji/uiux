@@ -21,6 +21,21 @@
     justify-content: flex-end;
     position: relative;
 }
+.sub_visual.bg1 {
+    background-image: url(../images/sub/sub_visual01.jpg);
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual05.jpg);
+}
 .sub_visual .breadcrumb ol {
     display: flex;
     gap: 0 1.7647em;

@@ -340,10 +340,12 @@ header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
         border-radius: 50%;
         background-color: #fff;
     }
-    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
         color: var(--color-main);
     }
-    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
+    header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after,
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
         background-color: var(--color-main);
     }
 }/*@media*/
