@@ -128,9 +128,306 @@
     }
     
 }/*@media*/
-
 @media screen and (max-width:450px){
     .ctn_ceo .ceo_head .ceo_txt p br {
         display: none; /* 줄바꿈 제거 */
     }
 }
+
+/************ 기업소개 > 연혁 *************/
+
+.ctn_history .his_head {
+    font-size: clamp(5vw, 5vw, 6rem);
+    /* padding: 2.6833em 0 2.6833em 0; */
+    height: clamp(135px, 30vw, 400px);
+    background: url(../images/contents/his_head01.jpg) no-repeat center center / cover;
+    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ctn_history .his_head.bg2 {
+    background-image: url(../images/contents/his_head02.jpg);
+}
+.ctn_history .his_head.bg3 {
+    background-image: url(../images/contents/his_head03.jpg);
+}
+.ctn_history .his_head.bg4 {
+    background-image: url(../images/contents/his_head04.jpg);
+}
+.ctn_history .his_head h3 {
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative; /* strong태그 정렬의 기준 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+.ctn_history .his_head h3 strong {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    color: #fff;
+    transition: width 0.5s;
+}
+.ctn_history .his_cont {
+    margin: 87px 0 147px 0;
+}
+.ctn_history .his_cont .wrapper {
+    display: flex; /* his_tit - his_year 좌우 배치 */
+    justify-content: space-between;
+}
+.ctn_history .his_cont.tit_right .wrapper {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.ctn_history .his_cont .his_tit {
+    max-width: 45%;
+}
+.ctn_history .his_cont .his_tit strong {
+    font-weight: 700;
+    color: var(--color-main);
+}
+.ctn_history .his_cont .his_tit h4 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-title);
+    line-height: 1.3;
+    margin: 13px 0 0 0;
+}
+.ctn_history .his_cont .his_year {
+    width: 50%;
+    position: relative; /* before 정렬의 기준 */
+    padding-left: 37px;
+}
+.ctn_history .his_cont.tit_right .his_year {
+    padding-left: 0;
+    padding-right: 37px;
+}
+.ctn_history .his_cont .his_year::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #EDEDED;
+    /* background-color: green; */
+}
+.ctn_history .his_cont.tit_right .his_year::before {
+    left: auto;
+    right: 0;
+}
+.ctn_history .his_cont .his_year .year_tit {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin: 0 0 15px 0;
+    position: relative; /* before 정렬의 기준 */
+}
+/*
+    <div class="year_tit"></div>    --- 첫번째 year_tit에는 적용 X
+    <div class="year_list"></div>
+    <div class="year_tit"></div>    ---- 두번째부터 나오는 year_tit에만 적용할 수 있게
+    <div class="year_list"></div>
+    .year_list + .year_tit ==> year_list 다음에 나오는 year_tit에만 적용 이라는 뜻
+*/
+.ctn_history .his_cont .his_year .year_list + .year_tit {
+    margin-top: 40px;
+}
+.ctn_history .his_cont .his_year .year_tit::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 13px;
+    z-index: 10;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit::before {
+    left: auto;
+    right: -40px;
+}
+/*
+    <ul>
+        <li></li> --- 같은 태그가 연속으로 반복될때 first-child, last-child
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="his_year">
+        <div class="year_tit"></div>    ---- first-child 선택가능
+        <div class="year_list"></div>
+        <div class="year_tit"></div>
+        <div class="year_list"></div>
+        <div class="year_tit"></div>    --- last-child 선택은 불가능
+        <div class="year_list"></div>   --- last-child 선택가능
+    </div>
+    year_tit:first-child 가능
+    year_list:first-child 불가능 
+    year_tit:last-child 불가능
+    year_list:last-child 가능
+*/
+.ctn_history .his_cont .his_year .year_tit:first-child::after {
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 0;
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit:first-child::after {
+    left: auto;
+    right: -37px;
+}
+.ctn_history .his_cont .his_year .year_list {
+    position: relative; /* after 정렬의 기준 */
+}
+.ctn_history .his_cont .his_year .year_list:last-child::after {
+    content: "";
+    position: absolute;
+    left: -37px;
+    bottom: -10px;
+    width: 2px;
+    height: calc(100% + 48px);
+    background-color: #fff;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+    left: auto;
+    right: -37px;
+}
+.ctn_history .his_cont .his_year .year_list dl dt {
+    color: var(--color-title);
+    float: left;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+    float: right;
+}
+.ctn_history .his_cont .his_year .year_list dl dd {
+    margin: 0 0 7px 92px;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+    margin: 0 92px 7px 0;
+}
+.ctn_history .his_bar {
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    z-index: 99; /* header 바로 아래 99 */
+    transform: translateX(-50%);
+    background-image: linear-gradient(90deg, rgba(224, 0, 54, 0.8), rgba(143, 20, 50, 0.8));
+    backdrop-filter: blur(10px);
+    border-radius: 70px;
+    padding: 5px;
+    color: #fff;
+    max-width: 95%;
+    overflow: hidden;
+    transition: bottom 0.5s;
+}
+.ctn_history .his_bar.hide {
+    bottom: -100px;
+}
+.ctn_history .his_bar ul {
+    display: flex;
+    gap: 0 5px;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.ctn_history .his_bar ul::-webkit-scrollbar {
+    display: none;
+}
+.ctn_history .his_bar ul li a {
+    display: block;
+    padding: 0.6em 1.5em 0.5em 1.5em;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    border-radius: 60px;
+    white-space: nowrap;
+}
+.ctn_history .his_bar ul li.active a {
+    background-color: var(--color-title);
+}
+
+@media screen and (max-width:1024px){
+    .ctn_history .his_cont {
+        margin: 37px 0 70px 0;
+    }
+    .ctn_history .his_cont .wrapper {
+        display: block; /* flex 해제 */
+    }
+    .ctn_history .his_cont.tit_right .wrapper {
+        text-align: left;
+    }
+    .ctn_history .his_cont .his_tit {
+        max-width: 100%;
+    }
+    .ctn_history .his_cont .his_tit h4 {
+        font-size: 24px;
+        margin: 10px 0 0 0;
+    }
+    .ctn_history .his_cont .his_tit h4 br {
+        display: none;
+    }
+    .ctn_history .his_cont .his_year {
+        width: auto;
+        padding-left: 28px;
+        margin: 28px 0 0 0;
+    }
+    .ctn_history .his_cont.tit_right .his_year {
+        padding-left: 28px;
+        padding-right: 0;
+    }
+    .ctn_history .his_cont.tit_right .his_year::before {
+        left: 0;
+        right: auto;
+    }
+    .ctn_history .his_cont .his_year .year_tit {
+        font-size: 22px;
+        margin: 0 0 14px 0;
+    }
+    .ctn_history .his_cont .his_year .year_list + .year_tit {
+        margin-top: 28px;
+    }
+    .ctn_history .his_cont .his_year .year_tit::before {
+        left: -30px;
+        top: 8px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit::before {
+        left: -30px;
+        right: auto;
+    }
+    .ctn_history .his_cont .his_year .year_tit:first-child::after {
+        left: -28px;
+        height: 14px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit:first-child::after {
+        left: -28px;
+        right: auto;
+    }
+    .ctn_history .his_cont .his_year .year_list:last-child::after {
+        left: -28px;
+        height: calc(100% + 44px);
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+        left: -28px;
+        right: auto;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+        float: left;
+    }
+    .ctn_history .his_cont .his_year .year_list dl dd {
+        margin: 0 0 7px 80px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+        margin: 0 0 7px 80px;
+    }
+    .ctn_history .his_bar ul li a {
+        font-size: 16px;
+    }
+}/*@media*/

@@ -88,4 +88,142 @@ $(document).ready(function(){
         }
     })
 
+
+    /*******************************
+     * 회사소개 > 연혁 
+    **********************************/
+    let history_length = $('.ctn_history').length
+
+    const snbScroll = function() {
+        const $menu_wrap = $(".ctn_history .his_bar ul");  /* 선택자를 잘 입력해야함 */
+        const $menu_li = $(".ctn_history .his_bar ul li");
+        function scrollToElement($element) {
+            const containerWidth = $menu_wrap.width();
+            const itemWidth = $element.outerWidth(true);
+            const totalItemsWidth = $menu_wrap[0].scrollWidth;
+            const newScrollPosition = ($element.index() === 0) ? 0 :
+                ($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
+                $element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
+            $menu_wrap.animate({
+                scrollLeft: newScrollPosition
+            }, 500);
+        }
+        const $activeItem = $menu_wrap.find(".active");
+        if ($activeItem.length) {
+            scrollToElement($activeItem);
+        }
+    }
+    
+    if(history_length > 0){
+        snbScroll();   /* 함수의 실행 */
+    }
+
+    /*
+        .ctn_history .his_head 가 여러개..... (4개)
+        4개 각각의 애니메이션 시작 시기와 종료시기를 계산해야함
+
+        콘텐츠가 브라우저 아래에서 위로 올라오는 위치
+        스크롤값 + 브라우저의 높이 == 콘텐츠의 offset().top 값과 같음
+        ++ 브라우저 높이의 몇 %를 더하면 애니메이션 시작 시기
+    */
+    function his_head(){
+        let obj_name = $('.ctn_history .his_head') // 영역
+        let obj_txt = 'h3 strong' //애니메이션 글자
+        let obj_length = obj_name.length //저 선택자로 선택되는 요소의 갯수
+        let obj_top //위에서 부터 해당 요소 위까지의 거리
+        let obj_start //애니메이션 시작 시기
+        let obj_end //애니메이션 종료 시기
+        let obj_per //애니메이션 진행률
+        let scrolling = $(window).scrollTop() //스크롤 값
+        let win_h = $(window).height() //브라우저 높이
+
+        for(i=0; i<obj_length; i++){
+            obj_top = obj_name.eq(i).offset().top
+            obj_start = obj_top - win_h + (win_h * 0.2)
+            obj_end = obj_top - win_h + (win_h * 0.9)
+            //console.log(i, '번째', scrolling, obj_end)
+            if(scrolling > obj_end){ //애니메이션 종료
+                //console.log(i, '종료')
+                obj_per = 100
+            }else if(scrolling < obj_start){ //애니메이션 시작전
+                //console.log(i, '시작전')
+                obj_per = 0
+            }else{
+                //console.log(i, '진행중')
+                //시작부터 스크롤한값 / 스크롤 구간 전체값 * 100
+                obj_per = (scrolling - obj_start) / (obj_end - obj_start) * 100
+            }
+            //console.log(i, '번째', obj_per)
+            obj_name.eq(i).find(obj_txt).width(obj_per + '%')
+        }
+    }//his_head
+
+    function his_area(){
+        //함수 안에서 선언한 변수명은 지역변수라고 함 
+        //(다른 함수 안에 있는 변수와 변수명이 같아도 됨- 이 함수에서만 통하는 이름)
+        let obj_name = $('.ctn_history .his_wrap')
+        let obj_nav = $('.ctn_history .his_bar ul li')
+        let obj_length = obj_name.length
+        let obj_top //각 콘텐츠의 꼭대기 부터의 거리값
+        let obj_start //애니메이션 시작 위치
+        let obj_end //애니메이션 종료 위치
+        let scrolling = $(window).scrollTop() //스크롤 값
+        let win_h = $(window).height() //브라우저 높이
+        //console.log(obj_length)
+
+        for(i=0; i<obj_length; i++){
+            obj_top = obj_name.eq(i).offset().top
+            obj_start = obj_top - win_h + (win_h * 0.5)
+            obj_end = obj_top + obj_name.eq(i).height() - (win_h * 0.5)
+            //console.log(i, '번째', obj_start, scrolling, obj_end)
+            if((scrolling < obj_end) && (scrolling > obj_start)){
+                //console.log(i, '진행중')
+                obj_nav.removeClass('active')
+                obj_nav.eq(i).addClass('active')
+                //snbScroll()
+            }
+        }
+    }//his_area
+
+    function his_nav(){
+        let scrolling = $(window).scrollTop()
+        let win_h = $(window).height()
+        let obj_area = $('.ctn_history')
+        let obj_name = $('.ctn_history .his_bar')
+        let obj_top = obj_area.offset().top
+        let obj_start = obj_top
+        let obj_end = obj_top + obj_area.height() - win_h
+        //console.log(obj_end, scrolling)
+        if(scrolling > obj_end){
+            //console.log('안보임')
+            obj_name.addClass('hide')
+        }else if(scrolling < obj_start){
+            //console.log('시작전')
+            obj_name.addClass('hide')
+        }else{
+            //console.log('진행중')
+            obj_name.removeClass('hide')
+        }
+    }//his_nav
+
+    if(history_length > 0){
+        his_head()   /* 함수의 실행 */
+        his_area()
+        his_nav()
+    }
+    $(window).scroll(function(){/* 브라우저가 스크롤 할때마다 실행 */
+        if(history_length > 0){
+            his_head() 
+            his_area() 
+            his_nav() 
+        }
+    })
+    $(window).resize(function(){ /* 브라우저가 리사이즈 될때마다 계산 */
+        if(history_length > 0){
+            his_head()   
+            his_area()
+            his_nav()
+        }
+    })
+
 })//맨끝
