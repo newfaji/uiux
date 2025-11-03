@@ -177,3 +177,65 @@
         font-size: 28px;
     }
 }
+
+/* table 공통 스타일 */
+.table_wrap {
+    overflow-x: auto;
+}
+.table_wrap table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    /* 테이블에는 각 칸의 테두리를 th, td의 border로 줌 
+     이때 각 칸과 칸 사이여 여백 발생 그 여백을 없애고
+     칸과 칸사이에 선이 중첩되서 두배가 되는 현상도 막아줌
+     이건 오직 테이블에만 가능한 속성 */
+    border-top: 2px solid var(--color-title);
+}
+.table_wrap table th,
+.table_wrap table td {
+    border: 1px solid #ccc;
+    padding: 7px 5px 3px 5px;
+}
+/* 
+    <tr>
+        <th></th>   ---- th:first-child 
+        <td></td>  --td:first-child XXXXXXX (아님)
+    </tr>
+    <tr>
+        <td></td>   ---- td:first-child
+        <td></td>
+    </tr>
+    맨처음에 나오는 태그가 th일수도 있고 td일수도 있어서
+*/
+.table_wrap table th:first-child,
+.table_wrap table td:first-child {
+    border-left: 0;
+}
+.table_wrap table th:last-child,
+.table_wrap table td:last-child {
+    border-right: 0;
+}
+.table_wrap table thead th,
+.table_wrap table thead td {
+    background-color: #F7F7F7;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-title);
+    padding: 12px 5px 7px 5px;
+    text-align: center;
+}
+.table_wrap table tbody th {
+    background-color: #F7F7F7;
+    font-weight: 700;
+    color: var(--color-title);
+    text-align: left;
+    padding-left: 20px;
+}
+.table_wrap table tbody td {
+    text-align: center;
+}
+.table_wrap.count table tbody td {
+    text-align: right;
+    padding-right: 15px;
+}

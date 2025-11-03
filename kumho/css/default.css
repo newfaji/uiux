@@ -35,3 +35,26 @@ button {
     box-sizing: border-box;
     /* padding과 width/height를 같이주면 사이즈가 늘어나는 현상 막기 */
 }
+fieldset {
+    border: none;
+}
+legend {
+    display: none;
+}
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+input[type="submit"] {
+    cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+}
+
+table caption {
+    display: none; /* 설명글 숨김 */
+}
+table th {
+    font-weight: inherit; /* 글자 두께 기본으로 */
+}
