@@ -30,7 +30,7 @@
 .list ul li a { position:relative; display:block; }
 .list ul li a strong { overflow:hidden; display:block; background:#13269c; box-shadow:3px 3px 10px rgba(0,0,0,0.2) }
 .list ul li a strong img { display:block; width:100%; object-fit:cover; transition:0.5s; }
-.list ul li a span { opacity:0; position:absolute; left:0; top:50%; width:100%; text-align:center; color:#FFF; font-size:1.2rem; font-weight:600; transform:translateY(-50%); transition:0.5s }
+.list ul li a span { opacity:0; position:absolute; left:10%; top:50%; width:80%; text-align:center; color:#FFF; font-size:1rem; font-weight:600; transform:translateY(-50%); transition:0.5s }
 .list ul li a:hover strong img { transform:scale3d(1.1,1.1,1); opacity:0.2 }
 .list ul li a:hover span { opacity:1 }
 
