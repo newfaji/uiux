@@ -1,0 +1,62 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+/*
+    <li>
+        <a></a> --- span 덮는 용도
+        <span class="fp-tooltip"></span>
+    </li>
+*/
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 10px 0 10px 0;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid red;
+}
+#fp-nav ul li a span {
+    display: none;
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    left: auto;
+    color: rgba(255,255,255,0.6);
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+}
+
+h2 {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.visual {
+    background-color: blueviolet;
+    color: #fff;
+}
+.tree {
+    
+}
+.work {
+    background-color: tomato;
+    color: #fff;
+}
+.news {
+    
+}
+footer {
+    background-color: var(--color-title);
+    color: #fff;
+}
+
